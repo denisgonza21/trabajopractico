@@ -4,12 +4,13 @@ using System.Text;
 
 namespace ClasesBiblioteca
 {
-    class Persona 
+    public class Persona 
     {
-        public int Id { get; set; }
+        public string Documento { get; set; }
         public string NombreApellido { get; set; }
         public int Telefono { get; set; }
+        public string Direccion { get; set; }
        
-        public Persona() { }
+        public void ObtenerDatosPersona() { }
     }
 }

@@ -4,12 +4,15 @@ using System.Text;
 
 namespace ClasesBiblioteca
 {
-    class Cliente : Persona
+    public class Cliente : Persona
     {
-        public string Direccion { get; set; }
+        
         public DateTime FechaInscripcion { get; set;}
 
-        public Cliente() { }
+        public string ObtenerDatosCliente()
+        {
+            return $"{NombreApellido} con documneto nro {Documento} domiciliado en {Direccion} con nro de telefono:{Telefono}, inscripto en fecha {FechaInscripcion}";
+        }
 
     }
 }
