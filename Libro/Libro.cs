@@ -4,6 +4,7 @@ namespace ClasesBiblioteca
 {
     public class Libro
     {
+        //prueba de repositorio
         public string Nombre { get; set; }
         public string Editorial { get; set; }
         public string Autor { get; set; }
