@@ -6,7 +6,7 @@ namespace ClasesBiblioteca
 {
     public class Cargo
     {
-        public string cargo;
+        public string cargo { get; set; }
 
         public void ObtenerDatosCargo(){} 
 	}

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ClasesBiblioteca
 {
@@ -6,16 +8,16 @@ namespace ClasesBiblioteca
     {
         //prueba de repositorio
         public string Nombre { get; set; }
-        public string Editorial { get; set; }
-        public string Autor { get; set; }
+        public Editorial editorial { get; set; }
+        public Autor autor { get; set; }
         public int cantidad_ejemplares { get; set; }
         public int cantidad_disponible { get; set; }
 
-        public Libro() { }
-
         public string ObtenerFichaCompleta()
         {
-            return $"Nombre:{Nombre} Editorial:{Editorial} Autor:{Autor} Cant.Ejemplares:{cantidad_ejemplares} Cant.Disponible:{cantidad_disponible}";
+            return $"Nombre:{Nombre} Editorial:{editorial} Autor:{autor} Cant.Ejemplares:{cantidad_ejemplares} Cant.Disponible:{cantidad_disponible}";
+
         }
     }
 }
+        

@@ -6,9 +6,9 @@ namespace ClasesBiblioteca
 {
     public class Funcionario: Persona
     {
-        public DateTime fechaInicio;
-        public Cargo cargo;
-        
+        public DateTime fechaInicio { get; set; }
+        public Cargo cargo { get; set; }
+
 
         public string ObtenerDatosFuncionario()
         {
