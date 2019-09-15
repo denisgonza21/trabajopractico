@@ -4,11 +4,12 @@ using System.Text;
 
 namespace ClasesBiblioteca
 {
-    class Persona
+    class Persona 
     {
         public int Id { get; set; }
         public string NombreApellido { get; set; }
         public int Telefono { get; set; }
-        public string TipoPersona { get; set; }
+       
+        public Persona() { }
     }
 }
