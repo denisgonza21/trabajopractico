@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ClasesBiblioteca
-{
+{   //clase cliente
     public class Cliente : Persona
     {
         
