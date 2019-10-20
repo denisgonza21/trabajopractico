@@ -10,6 +10,6 @@ namespace ClasesBiblioteca
         public DateTime FechaDevolucion { get; set; }
         public DateTime FechaVencimiento { get; set; }
 
-        public void DatosPrestamo() { };
+        public void DatosPrestamo() { }
     }
 }
