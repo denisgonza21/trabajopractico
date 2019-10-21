@@ -4,13 +4,47 @@ using System.Text;
 
 namespace ClasesBiblioteca
 {
+    public enum GeneroLiterario
+    {
+        Novelas,
+        CienciaFiccion,
+        Fantastica,
+        Drama
+    }
+
     public class Autor:Persona
     {
-        public string GeneroLiterario { get; set; }
+        
 
-        public string ObtenerDatosAutor()
+        public GeneroLiterario Genero { get; set; }
+
+        public override string ToString()
         {
-            return $"{NombreApellido} con documneto nro {Documento} domiciliado en {Direccion} con nro de telefono:{Telefono}, especializado en el genero {GeneroLiterario}";
+            return NombreApellido;
+        }
+
+
+        public static List<Autor> listaAutor = new List<Autor>();
+
+        public static List<Autor> ObtenerAutores()
+        {
+            return listaAutor;
+        }
+
+        public static void AgregarAutor(Autor a)
+        {
+            listaAutor.Add(a);
+        }
+
+        public static void EliminarAutor(Autor a)
+        {
+            listaAutor.Remove(a);
+        }
+
+        public static void EditarAutor(Autor a, int indice)
+        {
+
+            Autor.listaAutor[indice] = a;
         }
     }
 }

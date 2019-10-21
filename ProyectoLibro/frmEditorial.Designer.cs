@@ -38,6 +38,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.lstEditorial = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -100,30 +101,42 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(79, 295);
+            this.btnAgregar.Location = new System.Drawing.Point(73, 254);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 36);
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(225, 295);
+            this.btnModificar.Location = new System.Drawing.Point(219, 254);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 36);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(372, 295);
+            this.btnEliminar.Location = new System.Drawing.Point(366, 254);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 37);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lstEditorial
+            // 
+            this.lstEditorial.FormattingEnabled = true;
+            this.lstEditorial.Location = new System.Drawing.Point(73, 312);
+            this.lstEditorial.Name = "lstEditorial";
+            this.lstEditorial.Size = new System.Drawing.Size(367, 95);
+            this.lstEditorial.TabIndex = 10;
+            this.lstEditorial.SelectedIndexChanged += new System.EventHandler(this.lstEditorial_SelectedIndexChanged);
             // 
             // frmEditorial
             // 
@@ -131,6 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(544, 450);
+            this.Controls.Add(this.lstEditorial);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -143,6 +157,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmEditorial";
             this.Text = "frmEditorial";
+            this.Load += new System.EventHandler(this.frmEditorial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +175,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ListBox lstEditorial;
     }
 }

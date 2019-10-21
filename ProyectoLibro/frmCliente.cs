@@ -78,7 +78,7 @@ namespace ProyectoLibro
             cliente.NombreApellido = txtNombre.Text;
             cliente.Documento = txtDocumento.Text;
             cliente.Direccion = txtDireccion.Text;
-            cliente.Telefono = Convert.ToInt32(txtTelefono.Text);
+            cliente.Telefono = txtTelefono.Text;
             cliente.FechaInscripcion = dtpFechaIngreso.Value.Date;
 
             return cliente;
