@@ -16,7 +16,7 @@ namespace ProyectoLibro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLibro());
+            Application.Run(new frmMenu());
         }
     }
 }

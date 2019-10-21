@@ -40,6 +40,9 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.lblGenero = new System.Windows.Forms.Label();
+            this.cboGenero = new System.Windows.Forms.ComboBox();
+            this.lstAutor = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -74,7 +77,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(76, 164);
+            this.lblDireccion.Location = new System.Drawing.Point(67, 128);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(52, 13);
             this.lblDireccion.TabIndex = 3;
@@ -83,7 +86,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(360, 163);
+            this.lblTelefono.Location = new System.Drawing.Point(354, 128);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 4;
@@ -105,44 +108,73 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(149, 160);
+            this.txtDireccion.Location = new System.Drawing.Point(149, 125);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(171, 20);
             this.txtDireccion.TabIndex = 7;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(429, 158);
+            this.txtTelefono.Location = new System.Drawing.Point(429, 125);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(197, 20);
             this.txtTelefono.TabIndex = 8;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(125, 286);
+            this.btnAgregar.Location = new System.Drawing.Point(128, 222);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 29);
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(308, 285);
+            this.btnModificar.Location = new System.Drawing.Point(311, 221);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 30);
             this.btnModificar.TabIndex = 10;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(476, 285);
+            this.btnEliminar.Location = new System.Drawing.Point(479, 221);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 30);
             this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lblGenero
+            // 
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Location = new System.Drawing.Point(67, 176);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(42, 13);
+            this.lblGenero.TabIndex = 12;
+            this.lblGenero.Text = "Genero";
+            // 
+            // cboGenero
+            // 
+            this.cboGenero.FormattingEnabled = true;
+            this.cboGenero.Location = new System.Drawing.Point(149, 173);
+            this.cboGenero.Name = "cboGenero";
+            this.cboGenero.Size = new System.Drawing.Size(171, 21);
+            this.cboGenero.TabIndex = 13;
+            // 
+            // lstAutor
+            // 
+            this.lstAutor.FormattingEnabled = true;
+            this.lstAutor.Location = new System.Drawing.Point(128, 287);
+            this.lstAutor.Name = "lstAutor";
+            this.lstAutor.Size = new System.Drawing.Size(425, 82);
+            this.lstAutor.TabIndex = 14;
+            this.lstAutor.SelectedIndexChanged += new System.EventHandler(this.lstAutor_SelectedIndexChanged);
             // 
             // frmAutores
             // 
@@ -150,6 +182,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(793, 444);
+            this.Controls.Add(this.lstAutor);
+            this.Controls.Add(this.cboGenero);
+            this.Controls.Add(this.lblGenero);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -164,7 +199,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmAutores";
             this.Text = "Registro de Autor";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmAutores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +219,9 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.ComboBox cboGenero;
+        private System.Windows.Forms.ListBox lstAutor;
     }
 }
 

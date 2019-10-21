@@ -34,6 +34,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.lstCargo = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +50,7 @@
             // lblNuevoCargo
             // 
             this.lblNuevoCargo.AutoSize = true;
-            this.lblNuevoCargo.Location = new System.Drawing.Point(39, 74);
+            this.lblNuevoCargo.Location = new System.Drawing.Point(73, 57);
             this.lblNuevoCargo.Name = "lblNuevoCargo";
             this.lblNuevoCargo.Size = new System.Drawing.Size(70, 13);
             this.lblNuevoCargo.TabIndex = 1;
@@ -57,37 +58,49 @@
             // 
             // txtNuevoCargo
             // 
-            this.txtNuevoCargo.Location = new System.Drawing.Point(177, 70);
+            this.txtNuevoCargo.Location = new System.Drawing.Point(179, 54);
             this.txtNuevoCargo.Name = "txtNuevoCargo";
             this.txtNuevoCargo.Size = new System.Drawing.Size(293, 20);
             this.txtNuevoCargo.TabIndex = 2;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(82, 191);
+            this.btnAgregar.Location = new System.Drawing.Point(211, 95);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 36);
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(261, 191);
+            this.btnModificar.Location = new System.Drawing.Point(292, 95);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 36);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(447, 191);
+            this.btnEliminar.Location = new System.Drawing.Point(373, 95);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 36);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // lstCargo
+            // 
+            this.lstCargo.FormattingEnabled = true;
+            this.lstCargo.Location = new System.Drawing.Point(105, 175);
+            this.lstCargo.Name = "lstCargo";
+            this.lstCargo.Size = new System.Drawing.Size(438, 95);
+            this.lstCargo.TabIndex = 6;
+            this.lstCargo.Click += new System.EventHandler(this.lstCargo_Click);
             // 
             // frmCargo
             // 
@@ -95,6 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(645, 312);
+            this.Controls.Add(this.lstCargo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -103,6 +117,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCargo";
             this.Text = "Registro de Cargos";
+            this.Load += new System.EventHandler(this.frmCargo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +131,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ListBox lstCargo;
     }
 }
