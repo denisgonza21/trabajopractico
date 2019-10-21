@@ -26,8 +26,8 @@ namespace ProyectoLibro
         private void frmLibro_Load(object sender, EventArgs e)
         {
             ActualizarListaLibros();
-           // cmbAutor.DataSource = Autor.;
-           // cmbEditorial.DataSource = Editorial.;
+           cmbAutor.DataSource = Autor.ObtenerAutores();
+           cmbEditorial.DataSource = Editorial.ObtenerEditoriales();
             cmbAutor.SelectedItem = null;
             cmbEditorial.SelectedItem = null;
            
