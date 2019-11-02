@@ -146,8 +146,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Libro\ClasesBiblioteca.csproj">
-      <Project>{29fdee64-5402-45f2-a3ef-e4ef21478540}</Project>
+    <ProjectReference Include="..\ClasesBiblioteca\ClasesBiblioteca.csproj">
+      <Project>{2b3c1843-8ce7-4459-9590-6d738549b80c}</Project>
       <Name>ClasesBiblioteca</Name>
     </ProjectReference>
   </ItemGroup>
