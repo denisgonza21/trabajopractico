@@ -16,5 +16,10 @@ namespace ProyectoLibro
         {
             InitializeComponent();
         }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+        }
     }
 }

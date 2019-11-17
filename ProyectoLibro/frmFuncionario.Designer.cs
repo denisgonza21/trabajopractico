@@ -47,6 +47,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTelefono
@@ -84,7 +86,7 @@
             // dtpFechaIngreso
             // 
             this.dtpFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(332, 286);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(332, 322);
             this.dtpFechaIngreso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(169, 26);
@@ -93,7 +95,7 @@
             // lblFechaIngreso
             // 
             this.lblFechaIngreso.AutoSize = true;
-            this.lblFechaIngreso.Location = new System.Drawing.Point(167, 291);
+            this.lblFechaIngreso.Location = new System.Drawing.Point(167, 327);
             this.lblFechaIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaIngreso.Name = "lblFechaIngreso";
             this.lblFechaIngreso.Size = new System.Drawing.Size(134, 20);
@@ -182,7 +184,7 @@
             // 
             // btnlimpiar
             // 
-            this.btnlimpiar.Location = new System.Drawing.Point(538, 348);
+            this.btnlimpiar.Location = new System.Drawing.Point(538, 375);
             this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(112, 55);
@@ -194,7 +196,7 @@
             // 
             this.lstFuncionario.FormattingEnabled = true;
             this.lstFuncionario.ItemHeight = 20;
-            this.lstFuncionario.Location = new System.Drawing.Point(102, 435);
+            this.lstFuncionario.Location = new System.Drawing.Point(102, 462);
             this.lstFuncionario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstFuncionario.Name = "lstFuncionario";
             this.lstFuncionario.Size = new System.Drawing.Size(548, 144);
@@ -202,7 +204,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(398, 346);
+            this.btnEliminar.Location = new System.Drawing.Point(398, 373);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 57);
@@ -212,7 +214,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(251, 346);
+            this.btnModificar.Location = new System.Drawing.Point(251, 373);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(112, 55);
@@ -222,7 +224,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(102, 346);
+            this.btnAgregar.Location = new System.Drawing.Point(102, 373);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(112, 55);
@@ -230,12 +232,33 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(332, 286);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(318, 26);
+            this.txtPassword.TabIndex = 37;
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(167, 289);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(92, 20);
+            this.lblPassword.TabIndex = 36;
+            this.lblPassword.Text = "Contraseña";
+            // 
             // frmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(869, 649);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.lstFuncionario);
@@ -283,5 +306,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblPassword;
     }
 }
