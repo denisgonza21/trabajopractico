@@ -28,18 +28,12 @@ namespace ProyectoLibro
 
         private void LimpiarFormulario()
         {
-            cboCliente.SelectedItem = null;
+            
             cboLibro.SelectedItem = null;
             dtpFechaPrestamo.Value = System.DateTime.Now;
             dtpFechaVencimiento.Value = System.DateTime.Now;
+            txtCantidad.Text = "1";
          
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            PrestamoDetalle pd = (PrestamoDetalle)dtgDetallePrestamo.CurrentRow.DataBoundItem;
-            prestamo.detalle_prestamo.Remove(pd);
-            ActualizarDataGrid();
         }
 
         private void frmPrestamo_Load(object sender, EventArgs e)
@@ -49,50 +43,49 @@ namespace ProyectoLibro
             cboLibro.DataSource = Libro.ObtenerLibros();
             cboCliente.SelectedItem = null;
             cboLibro.SelectedItem = null;
+            dtpFechaPrestamo.Value = System.DateTime.Now;
+            dtpFechaPrestamo.Enabled = false;
+            txtCantidad.Text = "1";
+            dtpFechaVencimiento.Value = System.DateTime.Now;
             prestamo = new Prestamo();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            prestamo.FechaPrestamo = dtpFechaPrestamo.Value.Date;
-            prestamo.Cliente = (Cliente)cboCliente.SelectedItem;
-
             PrestamoDetalle pd = new PrestamoDetalle();
+            pd.cantidad = Convert.ToDouble(txtCantidad.Text);
             pd.libro = (Libro)cboLibro.SelectedItem;
-
             prestamo.detalle_prestamo.Add(pd);
             ActualizarDataGrid();
 
-            Limpiar();
+            LimpiarFormulario();
         }
 
-
-        private void Limpiar()
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
+            PrestamoDetalle pd = (PrestamoDetalle)dtgDetallePrestamo.CurrentRow.DataBoundItem;
+            prestamo.detalle_prestamo.Remove(pd);
+            ActualizarDataGrid();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            prestamo.fecha_prestamo = dtpFechaPrestamo.Value.Date;
+            prestamo.cliente = (Cliente)cboCliente.SelectedItem;
+
+            Prestamo.AgregarPrestamo(prestamo);
+            MessageBox.Show("El prestamo ha sido guardado con éxito");
+            LimpiarFormulario();
+            dtgDetallePrestamo.DataSource = null;
+            dtpFechaPrestamo.Value = System.DateTime.Now;
             cboCliente.SelectedItem = null;
-            cboLibro.SelectedItem = null;
-
-           
+            prestamo = new Prestamo();
         }
 
-        /*private void btnModificar_Click(object sender, EventArgs e)
+        private void btnlimpiar_Click(object sender, EventArgs e)
         {
-            Prestamo prest = (Editorial)dtgDetallePrestamo;
-            if (edito != null)
-            {
-                int index = dtgDetallePrestamo.SelectedIndex;
-                Editorial ed = ObtenerEditorialFormulario();
-                Editorial.EditarEditorial(index, ed);
-
-
-                LimpiarFormulario();
-                ActualizarListaEditoriales();
-            }
-            else
-            {
-                MessageBox.Show("Ojo, Selecciona un Item");
-            }
-        }*/
+            LimpiarFormulario();
+        }
     }
 }
 

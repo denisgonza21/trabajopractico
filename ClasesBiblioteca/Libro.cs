@@ -28,7 +28,7 @@ namespace ClasesBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCMD = "Selecte * from Libro";
+                string textoCMD = "Select * from Libro";
                 SqlCommand cmd = new SqlCommand(textoCMD, con);
                 SqlDataReader electorDeDatos = cmd.ExecuteReader();
 

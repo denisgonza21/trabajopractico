@@ -127,10 +127,5 @@ namespace ProyectoLibro
                 txtTelefono.Text = autor.telefono;
             }
         }
-
-        private void txtId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
