@@ -18,89 +18,111 @@ namespace ProyectoLibro
             InitializeComponent();
         }
 
-        private void frmEditorial_Load(object sender, EventArgs e)
-        {
-            ActualizarEditoriales();
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Editorial Edit = ObtenerDatosFormulario();
-            Editorial.AgregarEditorial(Edit);
-            ActualizarDatosLista();
+            Editorial edi = new Editorial();
+            edi.nombre = txtNombre.Text;
+            edi.direccion = txtDireccion.Text;
+            edi.telefono = txtTelefono.Text;
+
+
+
+            Editorial.AgregarEditorial(edi);
             LimpiarFormulario();
-        }
-        private Editorial ObtenerDatosFormulario()
-        {
-            Editorial Editorial = new Editorial();
-            Editorial.Nombre = txtNombre.Text;
-            Editorial.Direccion = txtDireccion.Text;
-            Editorial.Telefono = txtTelefono.Text;
-
-            return Editorial;
-
-        }
-        private void ActualizarDatosLista()
-        {
-            lstEditorial.DataSource = null;
-            lstEditorial.DataSource = Editorial.listaEditoriales;
+            ActualizarListaEditoriales();
         }
 
         private void LimpiarFormulario()
         {
+            txtId.Text = "";
             txtNombre.Text = "";
             txtDireccion.Text = "";
             txtTelefono.Text = "";
+
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            Editorial Edit = ObtenerDatosFormulario();
-            if (this.lstEditorial.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Favor seleccione una fila");
-            }
-
-            else
-            {
-                txtNombre.Focus();
-                int indice = lstEditorial.SelectedIndex;
-                Editorial.EditarEditorial(Edit, indice);
-                ActualizarEditoriales();
-            }
-            LimpiarFormulario();
-            ActualizarEditoriales();
-        }
-        private void ActualizarEditoriales()
+        private void ActualizarListaEditoriales()
         {
             lstEditorial.DataSource = null;
             lstEditorial.DataSource = Editorial.ObtenerEditoriales();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void frmEditorial_Load(object sender, EventArgs e)
         {
-            if (this.lstEditorial.SelectedItems.Count == 0)
+            ActualizarListaEditoriales();
+            txtId.Enabled = false;
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+
+            Editorial edito = (Editorial)lstEditorial.SelectedItem;
+            if (edito != null)
             {
-                MessageBox.Show("Favor seleccione una fila");
+                int index = lstEditorial.SelectedIndex;
+                Editorial ed = ObtenerEditorialFormulario();
+                Editorial.EditarEditorial(index, ed);
+
+
+                LimpiarFormulario();
+                ActualizarListaEditoriales();
             }
             else
             {
-                Editorial Edit = (Editorial)lstEditorial.SelectedItem;
-                Editorial.EliminarEditorial(Edit);
-                ActualizarEditoriales();
+                MessageBox.Show("Ojo, Selecciona un Item");
+            }
+        }
+
+        private Editorial ObtenerEditorialFormulario()
+        {
+            Editorial editorial = new Editorial();
+            editorial.id = Convert.ToInt16(txtId.Text);
+            editorial.nombre = txtNombre.Text;
+            editorial.direccion = txtDireccion.Text;
+            editorial.telefono = txtTelefono.Text;
+            return editorial;
+
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Editorial edito = (Editorial)lstEditorial.SelectedItem;
+            if (edito != null)
+            {
+                Editorial p = (Editorial)lstEditorial.SelectedItem;
+                Editorial.EliminarEditorial(p);
+                ActualizarListaEditoriales();
                 LimpiarFormulario();
             }
+            else
+            {
+                MessageBox.Show("Ojo, Selecciona un Item");
+            }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
         }
 
         private void lstEditorial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Editorial Edit = (Editorial)lstEditorial.SelectedItem;
+            Editorial edi = (Editorial)lstEditorial.SelectedItem;
 
-            if (Edit != null)
+            if (edi != null)
             {
-                txtNombre.Text = Edit.Nombre;
-                txtDireccion.Text = Edit.Direccion;
-                txtTelefono.Text = Edit.Telefono;
+                txtId.Text = Convert.ToString(edi.id);
+                txtNombre.Text = edi.nombre;
+                txtDireccion.Text = edi.direccion;
+                txtTelefono.Text = edi.telefono;
             }
         }
     }

@@ -23,11 +23,7 @@ namespace ProyectoLibro
             frmAutores.Show();
         }
 
-        private void cargoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCargo frmCargo = new frmCargo();
-            frmCargo.Show();
-        }
+       
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ClasesBiblioteca;
 
 namespace ClasesBiblioteca
 {
-    public class Funcionario: Persona
+    public class Funcionario
     {
+        public int id { get; set; }
+        public string nroDocumento { get; set; }
+        public string nombre { get; set; }
+        public string direccion { get; set; }
+        public string telefono { get; set; }
         public DateTime fechaInicio { get; set; }
-        public Cargo cargo { get; set; }
+        public string usuario { get; set; }
 
 
-        public string ObtenerDatosFuncionario()
-        {
-            return $"{NombreApellido} con documneto nro {Documento} domiciliado en {Direccion} con nro de telefono:{Telefono}, inicio sus actividades en fecha {fechaInicio}";
-        }
+        
     }
 }

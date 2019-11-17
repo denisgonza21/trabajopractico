@@ -18,98 +18,119 @@ namespace ProyectoLibro
             InitializeComponent();
         }
 
-        private void frmAutores_Load(object sender, EventArgs e)
-        {
-            ActualizarListaAutorores();
-            cboGenero.DataSource = Enum.GetValues(typeof(ClasesBiblioteca.GeneroLiterario));
-            cboGenero.SelectedItem = null;
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Autor a = ObtenerDatosFormulario();
-            Autor.AgregarAutor(a);
-            ActualizarDatosLista();
+            Autor autor = new Autor();
+            autor.nroDocumento = txtNroDocumento.Text;
+            autor.nombre = txtNombre.Text;
+            autor.direccion = txtDireccion.Text;
+            autor.telefono = txtTelefono.Text;
+
+
+
+            Autor.AgregarAutor(autor);
             LimpiarFormulario();
-        }
-        private Autor ObtenerDatosFormulario()
-        {
-            Autor Autor = new Autor();
-            Autor.Documento = txtNroDocumento.Text;
-            Autor.Genero = (GeneroLiterario)cboGenero.SelectedItem;
-            Autor.NombreApellido = txtNombre.Text;
-            Autor.Direccion = txtDireccion.Text;
-            Autor.Telefono = txtTelefono.Text;
-
-            return Autor;
-
-        }
-        private void ActualizarDatosLista()
-        {
-            lstAutor.DataSource = null;
-            lstAutor.DataSource = Autor.listaAutor;
+            ActualizarListaAutores();
         }
 
         private void LimpiarFormulario()
         {
+            txtId.Text = "";
+            txtNroDocumento.Text = "";
             txtNombre.Text = "";
             txtDireccion.Text = "";
-            cboGenero.SelectedItem = null;
-            txtNroDocumento.Text = "";
             txtTelefono.Text = "";
+
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            Autor a = ObtenerDatosFormulario();
-            if (this.lstAutor.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Favor seleccione una fila");
-            }
-
-            else
-            {
-                txtNombre.Focus();
-                int indice = lstAutor.SelectedIndex;
-                Autor.EditarAutor(a, indice);
-                ActualizarListaAutorores();
-            }
-            LimpiarFormulario();
-            ActualizarListaAutorores();
-        }
-        private void ActualizarListaAutorores()
+        private void ActualizarListaAutores()
         {
             lstAutor.DataSource = null;
             lstAutor.DataSource = Autor.ObtenerAutores();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void frmAutores_Load(object sender, EventArgs e)
         {
-            if (this.lstAutor.SelectedItems.Count == 0)
+            ActualizarListaAutores();
+            txtId.Enabled = false;
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Autor autor = (Autor)lstAutor.SelectedItem;
+            if (autor != null)
             {
-                MessageBox.Show("Favor seleccione una fila");
+                int index = lstAutor.SelectedIndex;
+                Autor a = ObtenerAutorFormulario();
+                Autor.EditarAutor(index, a);
+
+
+                LimpiarFormulario();
+                ActualizarListaAutores();
             }
             else
             {
+                MessageBox.Show("Ojo, Selecciona un Item");
+            }
+        }
+
+        private Autor ObtenerAutorFormulario()
+        {
+            Autor autor = new Autor();
+            autor.id = Convert.ToInt16(txtId.Text);
+            autor.nroDocumento = txtNroDocumento.Text;
+            autor.nombre = txtNombre.Text;
+            autor.direccion = txtDireccion.Text;
+            autor.telefono = txtTelefono.Text;
+            return autor;
+
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Autor autor = (Autor)lstAutor.SelectedItem;
+            if (autor != null)
+            {
                 Autor a = (Autor)lstAutor.SelectedItem;
                 Autor.EliminarAutor(a);
-                ActualizarListaAutorores();
+                ActualizarListaAutores();
                 LimpiarFormulario();
             }
+            else
+            {
+                MessageBox.Show("Ojo, Selecciona un Item");
+            }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
         }
 
         private void lstAutor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Autor a = (Autor)lstAutor.SelectedItem;
+            Autor autor = (Autor)lstAutor.SelectedItem;
 
-            if (a != null)
+            if (autor != null)
             {
-                txtNombre.Text = a.NombreApellido;
-                txtDireccion.Text = a.Direccion;
-                txtTelefono.Text = a.Telefono;
-                txtNroDocumento.Text = a.Documento;
-                cboGenero.SelectedItem = a.Genero;
+                txtId.Text = Convert.ToString(autor.id);
+                txtNroDocumento.Text = autor.nroDocumento;
+                txtNombre.Text = autor.nombre;
+                txtDireccion.Text = autor.direccion;
+                txtTelefono.Text = autor.telefono;
             }
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
