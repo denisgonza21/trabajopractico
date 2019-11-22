@@ -45,106 +45,120 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lstLibro = new System.Windows.Forms.ListBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(249, 39);
+            this.lblTitulo.Location = new System.Drawing.Point(374, 60);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTitulo.Size = new System.Drawing.Size(162, 24);
+            this.lblTitulo.Size = new System.Drawing.Size(252, 33);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Registro de Libros";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(71, 89);
+            this.lblNombre.Location = new System.Drawing.Point(104, 159);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(65, 20);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
             // lblAutor
             // 
             this.lblAutor.AutoSize = true;
-            this.lblAutor.Location = new System.Drawing.Point(71, 112);
+            this.lblAutor.Location = new System.Drawing.Point(104, 194);
+            this.lblAutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAutor.Name = "lblAutor";
-            this.lblAutor.Size = new System.Drawing.Size(32, 13);
+            this.lblAutor.Size = new System.Drawing.Size(48, 20);
             this.lblAutor.TabIndex = 2;
             this.lblAutor.Text = "Autor";
             // 
             // lblEditorial
             // 
             this.lblEditorial.AutoSize = true;
-            this.lblEditorial.Location = new System.Drawing.Point(71, 137);
+            this.lblEditorial.Location = new System.Drawing.Point(104, 233);
+            this.lblEditorial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEditorial.Name = "lblEditorial";
-            this.lblEditorial.Size = new System.Drawing.Size(44, 13);
+            this.lblEditorial.Size = new System.Drawing.Size(66, 20);
             this.lblEditorial.TabIndex = 3;
             this.lblEditorial.Text = "Editorial";
             // 
             // lblCantidadCopias
             // 
             this.lblCantidadCopias.AutoSize = true;
-            this.lblCantidadCopias.Location = new System.Drawing.Point(71, 162);
+            this.lblCantidadCopias.Location = new System.Drawing.Point(104, 271);
+            this.lblCantidadCopias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadCopias.Name = "lblCantidadCopias";
-            this.lblCantidadCopias.Size = new System.Drawing.Size(118, 13);
+            this.lblCantidadCopias.Size = new System.Drawing.Size(178, 20);
             this.lblCantidadCopias.TabIndex = 4;
             this.lblCantidadCopias.Text = "Cantidad de Ejemplares";
             // 
             // lblCantidadDisponible
             // 
             this.lblCantidadDisponible.AutoSize = true;
-            this.lblCantidadDisponible.Location = new System.Drawing.Point(71, 185);
+            this.lblCantidadDisponible.Location = new System.Drawing.Point(104, 307);
+            this.lblCantidadDisponible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadDisponible.Name = "lblCantidadDisponible";
-            this.lblCantidadDisponible.Size = new System.Drawing.Size(101, 13);
+            this.lblCantidadDisponible.Size = new System.Drawing.Size(151, 20);
             this.lblCantidadDisponible.TabIndex = 5;
             this.lblCantidadDisponible.Text = "Cantidad Disponible";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(204, 87);
+            this.txtNombre.Location = new System.Drawing.Point(304, 156);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(211, 20);
+            this.txtNombre.Size = new System.Drawing.Size(314, 26);
             this.txtNombre.TabIndex = 6;
             // 
             // txtcantDisponible
             // 
-            this.txtcantDisponible.Location = new System.Drawing.Point(204, 183);
+            this.txtcantDisponible.Location = new System.Drawing.Point(304, 304);
+            this.txtcantDisponible.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcantDisponible.Name = "txtcantDisponible";
-            this.txtcantDisponible.Size = new System.Drawing.Size(61, 20);
+            this.txtcantDisponible.Size = new System.Drawing.Size(90, 26);
             this.txtcantDisponible.TabIndex = 7;
             // 
             // txtcantEjemplares
             // 
-            this.txtcantEjemplares.Location = new System.Drawing.Point(204, 160);
+            this.txtcantEjemplares.Location = new System.Drawing.Point(304, 268);
+            this.txtcantEjemplares.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcantEjemplares.Name = "txtcantEjemplares";
-            this.txtcantEjemplares.Size = new System.Drawing.Size(63, 20);
+            this.txtcantEjemplares.Size = new System.Drawing.Size(92, 26);
             this.txtcantEjemplares.TabIndex = 8;
             // 
             // cmbEditorial
             // 
             this.cmbEditorial.FormattingEnabled = true;
-            this.cmbEditorial.Location = new System.Drawing.Point(204, 135);
+            this.cmbEditorial.Location = new System.Drawing.Point(304, 230);
+            this.cmbEditorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbEditorial.Name = "cmbEditorial";
-            this.cmbEditorial.Size = new System.Drawing.Size(211, 21);
+            this.cmbEditorial.Size = new System.Drawing.Size(314, 28);
             this.cmbEditorial.TabIndex = 9;
             // 
             // cmbAutor
             // 
             this.cmbAutor.FormattingEnabled = true;
-            this.cmbAutor.Location = new System.Drawing.Point(204, 110);
+            this.cmbAutor.Location = new System.Drawing.Point(304, 191);
+            this.cmbAutor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbAutor.Name = "cmbAutor";
-            this.cmbAutor.Size = new System.Drawing.Size(211, 21);
+            this.cmbAutor.Size = new System.Drawing.Size(314, 28);
             this.cmbAutor.TabIndex = 10;
             // 
             // btnsalir
             // 
-            this.btnsalir.Location = new System.Drawing.Point(467, 328);
+            this.btnsalir.Location = new System.Drawing.Point(698, 527);
+            this.btnsalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(75, 36);
+            this.btnsalir.Size = new System.Drawing.Size(112, 55);
             this.btnsalir.TabIndex = 31;
             this.btnsalir.Text = "Salir";
             this.btnsalir.UseVisualStyleBackColor = true;
@@ -152,9 +166,10 @@
             // 
             // btnlimpiar
             // 
-            this.btnlimpiar.Location = new System.Drawing.Point(355, 218);
+            this.btnlimpiar.Location = new System.Drawing.Point(530, 357);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Size = new System.Drawing.Size(75, 36);
+            this.btnlimpiar.Size = new System.Drawing.Size(112, 55);
             this.btnlimpiar.TabIndex = 30;
             this.btnlimpiar.Text = "Limpiar";
             this.btnlimpiar.UseVisualStyleBackColor = true;
@@ -162,9 +177,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(261, 216);
+            this.btnEliminar.Location = new System.Drawing.Point(390, 354);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 37);
+            this.btnEliminar.Size = new System.Drawing.Size(112, 57);
             this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -172,9 +188,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(163, 216);
+            this.btnModificar.Location = new System.Drawing.Point(242, 354);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 36);
+            this.btnModificar.Size = new System.Drawing.Size(112, 55);
             this.btnModificar.TabIndex = 28;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -182,9 +199,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(64, 216);
+            this.btnAgregar.Location = new System.Drawing.Point(94, 354);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 36);
+            this.btnAgregar.Size = new System.Drawing.Size(112, 55);
             this.btnAgregar.TabIndex = 27;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -193,18 +211,40 @@
             // lstLibro
             // 
             this.lstLibro.FormattingEnabled = true;
-            this.lstLibro.Location = new System.Drawing.Point(29, 283);
+            this.lstLibro.ItemHeight = 20;
+            this.lstLibro.Location = new System.Drawing.Point(42, 457);
+            this.lstLibro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstLibro.Name = "lstLibro";
-            this.lstLibro.Size = new System.Drawing.Size(425, 82);
+            this.lstLibro.Size = new System.Drawing.Size(636, 124);
             this.lstLibro.TabIndex = 26;
             this.lstLibro.SelectedIndexChanged += new System.EventHandler(this.lstLibro_SelectedIndexChanged);
             // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(304, 120);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(314, 26);
+            this.txtId.TabIndex = 33;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(104, 123);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(23, 20);
+            this.lblId.TabIndex = 32;
+            this.lblId.Text = "Id";
+            // 
             // frmLibro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(589, 393);
+            this.ClientSize = new System.Drawing.Size(884, 605);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.btnEliminar);
@@ -222,6 +262,7 @@
             this.Controls.Add(this.lblAutor);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblTitulo);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLibro";
             this.Text = "Registro de Libros";
             this.Load += new System.EventHandler(this.frmLibro_Load);
@@ -249,5 +290,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ListBox lstLibro;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblId;
     }
 }

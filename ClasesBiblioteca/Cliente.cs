@@ -156,8 +156,8 @@ namespace ClasesBiblioteca
                 {
                     cliente = new Cliente();
                     cliente.id = electorDeDatos.GetInt32(0);
-                    cliente.nombre = electorDeDatos.GetString(1);
-                    cliente.nroDocumento = electorDeDatos.GetString(2);
+                    cliente.nombre = electorDeDatos.GetString(2);
+                    cliente.nroDocumento = electorDeDatos.GetString(1);
                     cliente.direccion = electorDeDatos.GetString(3);
                     cliente.telefono = electorDeDatos.GetString(4);
                     cliente.fecha_inscripcion = electorDeDatos.GetDateTime(5);

@@ -10,18 +10,18 @@ namespace ClasesBiblioteca
 {
     public class Libro
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public Editorial Editorial { get; set; }
-        public Autor Autor { get; set; }
-        public int Cantidad_ejemplares { get; set; }
-        public int Cantidad_disponible { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public Editorial editorial { get; set; }
+        public Autor autor { get; set; }
+        public int cantidad_ejemplares { get; set; }
+        public int cantidad_disponible { get; set; }
 
         public static List<Libro> listaLibros = new List<Libro>();
 
         public override string ToString()
         {
-            return Nombre;
+            return nombre;
         }
 
         public static void AgregarLibro(Libro l)
@@ -35,11 +35,11 @@ namespace ClasesBiblioteca
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 //PARAMETROS
-                SqlParameter p1 = new SqlParameter("@nombre", l.Nombre);
-                SqlParameter p2 = new SqlParameter("@autor", l.Autor.id);
-                SqlParameter p3 = new SqlParameter("@editorial", l.Editorial.id);
-                SqlParameter p4 = new SqlParameter("@ejemplares", l.Cantidad_ejemplares);
-                SqlParameter p5 = new SqlParameter("@disponibles", l.Cantidad_disponible);
+                SqlParameter p1 = new SqlParameter("@nombre", l.nombre);
+                SqlParameter p2 = new SqlParameter("@autor", l.autor.id);
+                SqlParameter p3 = new SqlParameter("@editorial", l.editorial.id);
+                SqlParameter p4 = new SqlParameter("@ejemplares", l.cantidad_ejemplares);
+                SqlParameter p5 = new SqlParameter("@disponibles", l.cantidad_disponible);
 
 
                 //Le decimos a los parametros de que tipo de datos son
@@ -75,7 +75,7 @@ namespace ClasesBiblioteca
                 string SENTENCIA_SQL = "delete from Libro where Id = @Id";
 
                 SqlCommand cmd = new SqlCommand(SENTENCIA_SQL, con);
-                SqlParameter p6 = new SqlParameter("@id", e.Id);
+                SqlParameter p6 = new SqlParameter("@id", e.id);
                 p6.SqlDbType = SqlDbType.Int;
                 cmd.Parameters.Add(p6);
 
@@ -89,17 +89,17 @@ namespace ClasesBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCMD = "UPDATE Libro SET nombre = @nombre, editorial = @editorial, autor = @autor, cantidad_ejemplares = @ejemplares, cantidad_disponible = @disponibles  where id = @id";
+                string textoCMD = "UPDATE Libro SET nombre = @nombre, editorial = @editorial, autor = @autor, cantidad_ejemplares = @cantidad_ejemplares, cantidad_disponible = @cantidad_disponible  where id = @id";
 
                 SqlCommand cmd = new SqlCommand(textoCMD, con);
 
                 //DEFINICION DE PARAMETROS
-                SqlParameter p1 = new SqlParameter("@nombre", l.Nombre);
-                SqlParameter p2 = new SqlParameter("@autor", l.Autor.id);
-                SqlParameter p3 = new SqlParameter("@editorial", l.Editorial.id);
-                SqlParameter p4 = new SqlParameter("@ejemplares", l.Cantidad_ejemplares);
-                SqlParameter p5 = new SqlParameter("@disponibles", l.Cantidad_disponible);
-                SqlParameter p6 = new SqlParameter("@id", index);
+                SqlParameter p1 = new SqlParameter("@nombre", l.nombre);
+                SqlParameter p2 = new SqlParameter("@autor", l.autor.id);
+                SqlParameter p3 = new SqlParameter("@editorial", l.editorial.id);
+                SqlParameter p4 = new SqlParameter("@cantidad_ejemplares", l.cantidad_ejemplares);
+                SqlParameter p5 = new SqlParameter("@cantidad_disponible", l.cantidad_disponible);
+                SqlParameter p6 = new SqlParameter("@id", l.id);
 
                 //Le decimos a los parametros de que tipo de datos son
                 p1.SqlDbType = SqlDbType.VarChar;
@@ -131,7 +131,7 @@ namespace ClasesBiblioteca
 
             foreach (Libro e in listaLibros)
             {
-                if (e.Id == id)
+                if (e.id == id)
                 {
                     libro = e;
                     break;
@@ -160,12 +160,12 @@ namespace ClasesBiblioteca
                 while (elLectorDeDatos.Read())
                 {
                     libro = new Libro();
-                    libro.Id = elLectorDeDatos.GetInt32(0);
-                    libro.Nombre = elLectorDeDatos.GetString(1);
-                    libro.Editorial = Editorial.ObtenerEditoriales(elLectorDeDatos.GetInt32(2));
-                    libro.Autor = Autor.ObtenerAutores(elLectorDeDatos.GetInt32(3));
-                    libro.Cantidad_ejemplares = elLectorDeDatos.GetInt32(4);
-                    libro.Cantidad_disponible = elLectorDeDatos.GetInt32(5);
+                    libro.id = elLectorDeDatos.GetInt32(0);
+                    libro.nombre = elLectorDeDatos.GetString(1);
+                    libro.editorial = Editorial.ObtenerEditoriales(elLectorDeDatos.GetInt32(2));
+                    libro.autor = Autor.ObtenerAutores(elLectorDeDatos.GetInt32(3));
+                    libro.cantidad_ejemplares = elLectorDeDatos.GetInt32(4);
+                    libro.cantidad_disponible = elLectorDeDatos.GetInt32(5);
 
                     listaLibros.Add(libro);
                 }

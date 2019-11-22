@@ -32,13 +32,13 @@ namespace ClasesBiblioteca
             {
 
                 con.Open();//Abrimos la conex con la BD
-                string textoCmd = "INSERT INTO Prestamo (cliente, fecha_prestamo)  output INSERTED.id VALUES (@cliente, @fecha_prestamo)";
+                string textoCmd = "INSERT INTO Prestamo (cliente, fechaprestamo)  output INSERTED.id VALUES (@cliente, @fecha_prestamo)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
-                SqlParameter p1 = new SqlParameter("@cliente", p.cliente);
+                SqlParameter p1 = new SqlParameter("@cliente", p.cliente.id);
                 SqlParameter p2 = new SqlParameter("@fecha_prestamo", p.fecha_prestamo);
 
 
-                p1.SqlDbType = System.Data.SqlDbType.DateTime;
+                p1.SqlDbType = System.Data.SqlDbType.Int;
                 p2.SqlDbType = System.Data.SqlDbType.DateTime;
                
               
@@ -52,18 +52,18 @@ namespace ClasesBiblioteca
                 foreach (PrestamoDetalle dp in p.detalle_prestamo)
                 {
                     // insert para el detalle
-                    String textoCMD2 = "INSERT INTO Prestamo_Detalle(prestamo_id, cantidad, libro, fecha_devolucion)VALUES(@id, @cantidad, @libro, @fecha_devolucion)";
+                    String textoCMD2 = "INSERT INTO Prestamo_Detalle(prestamo_id, cantidad, libro)VALUES(@id, @cantidad, @libro)";
                     SqlCommand cmd2 = new SqlCommand(textoCMD2, con);
 
                     SqlParameter p6 = new SqlParameter("@id", id_prestamo);
                     SqlParameter p7 = new SqlParameter("@cantidad", dp.cantidad);
-                    //SqlParameter p8 = new SqlParameter("@libro", dp.libro.autor);
-                    SqlParameter p9 = new SqlParameter("@fecha_devolucion", dp.fecha_devolucion);
+                    SqlParameter p8 = new SqlParameter("@libro", dp.libro.id);
+                    //SqlParameter p9 = new SqlParameter("@fecha_devolucion", dp.fecha_devolucion);
 
                     cmd2.Parameters.Add(p6);
                     cmd2.Parameters.Add(p7);
-                    //cmd2.Parameters.Add(p8);
-                    cmd2.Parameters.Add(p9);
+                    cmd2.Parameters.Add(p8);
+                   // cmd2.Parameters.Add(p9);
 
                     cmd2.ExecuteNonQuery();
 

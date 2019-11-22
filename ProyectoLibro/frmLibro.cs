@@ -43,9 +43,9 @@ namespace ProyectoLibro
                 Libro Lib = ObtenerLibroFormulario();
                 Libro.EditarLibro(index, Lib);
 
-
-                LimpiarFormulario();
                 ActualizarListaLibros();
+                LimpiarFormulario();
+                
             }
             else
             {
@@ -56,11 +56,12 @@ namespace ProyectoLibro
         private Libro ObtenerLibroFormulario()
         {
             Libro libro = new Libro();
-            libro.Nombre = txtNombre.Text;
-            libro.Editorial = (Editorial)cmbEditorial.SelectedItem;
-            libro.Autor = (Autor)cmbAutor.SelectedItem;
-            libro.Cantidad_ejemplares = Convert.ToInt32(txtcantEjemplares.Text);
-            libro.Cantidad_disponible = Convert.ToInt32(txtcantDisponible.Text);
+            //libro.id = Convert.ToInt32();
+            libro.nombre = txtNombre.Text;
+            libro.editorial = (Editorial)cmbEditorial.SelectedItem;
+            libro.autor = (Autor)cmbAutor.SelectedItem;
+            libro.cantidad_ejemplares = Convert.ToInt32(txtcantEjemplares.Text);
+            libro.cantidad_disponible = Convert.ToInt32(txtcantDisponible.Text);
             return libro;
         }
 
@@ -103,12 +104,12 @@ namespace ProyectoLibro
 
             if (libro != null)
             {
-                txtNombre.Text= libro.Nombre;
-                cmbEditorial.SelectedItem= libro.Editorial;
-                cmbAutor.SelectedItem= libro.Autor;
-                int cant1=libro.Cantidad_ejemplares;
+                txtNombre.Text= libro.nombre;
+                cmbEditorial.SelectedItem= libro.editorial;
+                cmbAutor.SelectedItem= libro.autor;
+                int cant1=libro.cantidad_ejemplares;
                 txtcantEjemplares.Text = Convert.ToString(cant1);
-                int cant2 = libro.Cantidad_disponible;
+                int cant2 = libro.cantidad_disponible;
                 txtcantDisponible.Text = Convert.ToString(cant2);
             }
         }
@@ -116,11 +117,11 @@ namespace ProyectoLibro
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             Libro libro = new Libro();
-            libro.Nombre = txtNombre.Text;
-            libro.Editorial = (Editorial)cmbEditorial.SelectedItem;
-            libro.Autor = (Autor)cmbAutor.SelectedItem;
-            libro.Cantidad_ejemplares = Convert.ToInt32(txtcantEjemplares.Text);
-            libro.Cantidad_disponible = Convert.ToInt32(txtcantDisponible.Text);
+            libro.nombre = txtNombre.Text;
+            libro.editorial = (Editorial)cmbEditorial.SelectedItem;
+            libro.autor = (Autor)cmbAutor.SelectedItem;
+            libro.cantidad_ejemplares = Convert.ToInt32(txtcantEjemplares.Text);
+            libro.cantidad_disponible = Convert.ToInt32(txtcantDisponible.Text);
 
 
 

@@ -100,7 +100,14 @@ namespace ProyectoLibro
         }
 
 
-        private void lstCliente_SelectedIndexChanged(object sender, EventArgs e)
+    
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+        }
+
+        private void lstCliente_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Cliente c = (Cliente)lstCliente.SelectedItem;
 
@@ -112,14 +119,6 @@ namespace ProyectoLibro
                 txtTelefono.Text = c.telefono;
                 dtpFechaIngreso.Value = c.fecha_inscripcion;
             }
-
-
-
-        }
-
-        private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarFormulario();
         }
     }
 }
