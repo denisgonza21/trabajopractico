@@ -52,7 +52,8 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(296, 35);
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitulo.Location = new System.Drawing.Point(613, 163);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(272, 33);
@@ -62,7 +63,8 @@
             // lblNroDocumento
             // 
             this.lblNroDocumento.AutoSize = true;
-            this.lblNroDocumento.Location = new System.Drawing.Point(119, 147);
+            this.lblNroDocumento.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblNroDocumento.Location = new System.Drawing.Point(436, 275);
             this.lblNroDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNroDocumento.Name = "lblNroDocumento";
             this.lblNroDocumento.Size = new System.Drawing.Size(143, 20);
@@ -72,7 +74,8 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(119, 180);
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblNombre.Location = new System.Drawing.Point(436, 308);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 20);
@@ -82,7 +85,8 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(119, 216);
+            this.lblDireccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDireccion.Location = new System.Drawing.Point(436, 344);
             this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(75, 20);
@@ -92,7 +96,8 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(119, 252);
+            this.lblTelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTelefono.Location = new System.Drawing.Point(436, 380);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(71, 20);
@@ -101,7 +106,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(274, 141);
+            this.txtNroDocumento.Location = new System.Drawing.Point(591, 269);
             this.txtNroDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(294, 26);
@@ -109,7 +114,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(274, 177);
+            this.txtNombre.Location = new System.Drawing.Point(591, 305);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(294, 26);
@@ -117,7 +122,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(274, 213);
+            this.txtDireccion.Location = new System.Drawing.Point(591, 341);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(294, 26);
@@ -127,16 +132,16 @@
             // 
             this.lstAutor.FormattingEnabled = true;
             this.lstAutor.ItemHeight = 20;
-            this.lstAutor.Location = new System.Drawing.Point(55, 441);
+            this.lstAutor.Location = new System.Drawing.Point(372, 569);
             this.lstAutor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstAutor.Name = "lstAutor";
             this.lstAutor.Size = new System.Drawing.Size(636, 124);
             this.lstAutor.TabIndex = 14;
-            this.lstAutor.SelectedIndexChanged += new System.EventHandler(this.lstAutor_SelectedIndexChanged);
+            this.lstAutor.Click += new System.EventHandler(this.lstAutor_Click);
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(274, 249);
+            this.txtTelefono.Location = new System.Drawing.Point(591, 377);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(294, 26);
@@ -144,7 +149,7 @@
             // 
             // btnlimpiar
             // 
-            this.btnlimpiar.Location = new System.Drawing.Point(544, 341);
+            this.btnlimpiar.Location = new System.Drawing.Point(861, 469);
             this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(112, 55);
@@ -155,7 +160,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(404, 339);
+            this.btnEliminar.Location = new System.Drawing.Point(721, 467);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 57);
@@ -166,7 +171,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(257, 339);
+            this.btnModificar.Location = new System.Drawing.Point(574, 467);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(112, 55);
@@ -177,7 +182,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(108, 339);
+            this.btnAgregar.Location = new System.Drawing.Point(425, 467);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(112, 55);
@@ -188,7 +193,7 @@
             // 
             // btnsalir
             // 
-            this.btnsalir.Location = new System.Drawing.Point(712, 510);
+            this.btnsalir.Location = new System.Drawing.Point(1029, 638);
             this.btnsalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(112, 55);
@@ -199,7 +204,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(274, 105);
+            this.txtId.Location = new System.Drawing.Point(591, 233);
             this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(294, 26);
@@ -208,7 +213,8 @@
             // lblid
             // 
             this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(119, 111);
+            this.lblid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblid.Location = new System.Drawing.Point(436, 239);
             this.lblid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(23, 20);
@@ -219,8 +225,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(847, 620);
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.ClientSize = new System.Drawing.Size(1472, 963);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.btnsalir);
@@ -238,9 +245,11 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblNroDocumento);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmAutores";
-            this.Text = "Registro de Autor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Registro de Autores";
             this.Load += new System.EventHandler(this.frmAutores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

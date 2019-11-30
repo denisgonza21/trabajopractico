@@ -113,7 +113,9 @@ namespace ProyectoLibro
             LimpiarFormulario();
         }
 
-        private void lstEditorial_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void lstEditorial_Click(object sender, EventArgs e)
         {
             Editorial edi = (Editorial)lstEditorial.SelectedItem;
 

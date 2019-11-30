@@ -4,12 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Windows.Forms;
+using ClasesBiblioteca;
+using System.Data.SqlClient;
+
 
 namespace ClasesBiblioteca
 {
-    class SqlServer
+    public class SqlServer
     {
         public static string CADENA_CONEXION = ConfigurationManager.ConnectionStrings["SqlServer"].ConnectionString;
+        
+
+        
+
 
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoLibro
 {
-    public partial class frmMenu : Form
+    public partial class frmMenuPrincipal : Form
     {
-        public frmMenu()
+        public frmMenuPrincipal()
         {
             InitializeComponent();
         }
@@ -65,7 +65,7 @@ namespace ProyectoLibro
 
         private void salirToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmMenu frmMenu = new frmMenu();
+            frmMenuPrincipal frmMenu = new frmMenuPrincipal();
             this.Close();
         }
     }

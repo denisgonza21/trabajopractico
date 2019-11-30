@@ -110,6 +110,7 @@ namespace ClasesBiblioteca
                 cmd.Parameters.Add(c4);
                 cmd.Parameters.Add(c5);
                 cmd.Parameters.Add(c6);
+
                 cmd.ExecuteNonQuery();
             }
         }
@@ -122,7 +123,7 @@ namespace ClasesBiblioteca
 
             if (listaClientes.Count == 0)
             {
-                Cliente.ObtenerClientes();
+                Cliente.ObtenerCliente();
             }
 
             foreach (Cliente c in listaClientes)
@@ -141,10 +142,11 @@ namespace ClasesBiblioteca
 
 
 
-        public static List<Cliente> ObtenerClientes()
+        public static List<Cliente> ObtenerCliente()
             
         {
             Cliente cliente;
+            listaClientes.Clear();
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
@@ -173,7 +175,7 @@ namespace ClasesBiblioteca
         public override string ToString()
         {
            
-            return nombre;
+            return nroDocumento;
         }
 
     }

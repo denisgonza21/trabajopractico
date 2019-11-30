@@ -56,7 +56,11 @@ namespace ProyectoLibro
         private Libro ObtenerLibroFormulario()
         {
             Libro libro = new Libro();
-            //libro.id = Convert.ToInt32();
+            if (!string.IsNullOrEmpty(txtId.Text))
+            {
+                libro.id = Convert.ToInt32(txtId.Text);
+            }
+            
             libro.nombre = txtNombre.Text;
             libro.editorial = (Editorial)cmbEditorial.SelectedItem;
             libro.autor = (Autor)cmbAutor.SelectedItem;
@@ -70,6 +74,10 @@ namespace ProyectoLibro
             ActualizarListaLibros();
             cmbAutor.DataSource = Autor.ObtenerAutores();
             cmbEditorial.DataSource = Editorial.ObtenerEditoriales();
+            cmbAutor.SelectedItem = null;
+            cmbEditorial.SelectedItem = null;
+            txtId.Enabled = false;
+            ActualizarListaLibros();
         }
 
         private void btnsalir_Click(object sender, EventArgs e)
@@ -98,21 +106,7 @@ namespace ProyectoLibro
             LimpiarFormulario();
         }
 
-        private void lstLibro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Libro libro = (Libro)lstLibro.SelectedItem;
-
-            if (libro != null)
-            {
-                txtNombre.Text= libro.nombre;
-                cmbEditorial.SelectedItem= libro.editorial;
-                cmbAutor.SelectedItem= libro.autor;
-                int cant1=libro.cantidad_ejemplares;
-                txtcantEjemplares.Text = Convert.ToString(cant1);
-                int cant2 = libro.cantidad_disponible;
-                txtcantDisponible.Text = Convert.ToString(cant2);
-            }
-        }
+       
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
@@ -128,6 +122,23 @@ namespace ProyectoLibro
             Libro.AgregarLibro(libro);
             LimpiarFormulario();
             ActualizarListaLibros();
+        }
+
+        private void lstLibro_Click(object sender, EventArgs e)
+        {
+            Libro libro = (Libro)lstLibro.SelectedItem;
+
+            if (libro != null)
+            {
+                txtId.Text = Convert.ToString(libro.id);
+                txtNombre.Text = libro.nombre;
+                cmbEditorial.SelectedItem = libro.editorial;
+                cmbAutor.SelectedItem = libro.autor;
+                int cant1 = libro.cantidad_ejemplares;
+                txtcantEjemplares.Text = Convert.ToString(cant1);
+                int cant2 = libro.cantidad_disponible;
+                txtcantDisponible.Text = Convert.ToString(cant2);
+            }
         }
     }
 }

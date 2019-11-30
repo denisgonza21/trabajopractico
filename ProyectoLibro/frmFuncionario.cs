@@ -96,21 +96,7 @@ namespace ProyectoLibro
             return fun;
         }
 
-        private void lstFuncionario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Funcionario func = (Funcionario)lstFuncionario.SelectedItem;
-
-            if (func != null)
-            {
-                txtId.Text = Convert.ToString(func.id);
-                txtNroDocumento.Text = func.nroDocumento;
-                txtNombre.Text = func.nombre;
-                txtDireccion.Text = func.direccion;
-                txtTelefono.Text = func.telefono;
-                dtpFechaIngreso.Value = func.fechaInicio;
-                txtUsuario.Text = func.usuario;
-            }
-        }
+     
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -136,6 +122,22 @@ namespace ProyectoLibro
         private void btnsalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lstFuncionario_Click(object sender, EventArgs e)
+        {
+            Funcionario func = (Funcionario)lstFuncionario.SelectedItem;
+
+            if (func != null)
+            {
+                txtId.Text = Convert.ToString(func.id);
+                txtNroDocumento.Text = func.nroDocumento;
+                txtNombre.Text = func.nombre;
+                txtDireccion.Text = func.direccion;
+                txtTelefono.Text = func.telefono;
+                dtpFechaIngreso.Value = func.fechaInicio;
+                txtUsuario.Text = func.usuario;
+            }
         }
     }
 }

@@ -114,7 +114,9 @@ namespace ProyectoLibro
             LimpiarFormulario();
         }
 
-        private void lstAutor_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+        private void lstAutor_Click(object sender, EventArgs e)
         {
             Autor autor = (Autor)lstAutor.SelectedItem;
 

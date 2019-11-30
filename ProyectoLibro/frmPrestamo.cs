@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ProyectoLibro
 {
@@ -33,21 +34,25 @@ namespace ProyectoLibro
             dtpFechaPrestamo.Value = System.DateTime.Now;
             dtpFechaVencimiento.Value = System.DateTime.Now;
             txtCantidad.Text = "1";
+            txtEstado.Text = "";
+            txtNombre.Text = "";
          
         }
 
         private void frmPrestamo_Load(object sender, EventArgs e)
         {
             dtgDetallePrestamo.AutoGenerateColumns = true;
-            cboCliente.DataSource = Cliente.ObtenerClientes();
+            cboNroDocumento.DataSource = Cliente.ObtenerCliente();
             cboLibro.DataSource = Libro.ObtenerLibros();
-            cboCliente.SelectedItem = null;
+            cboNroDocumento.SelectedItem = null;
             cboLibro.SelectedItem = null;
             dtpFechaPrestamo.Value = System.DateTime.Now;
             dtpFechaPrestamo.Enabled = false;
             txtCantidad.Text = "1";
             dtpFechaVencimiento.Value = System.DateTime.Now;
             prestamo = new Prestamo();
+            txtEstado.Enabled = false;
+            txtNombre.Enabled = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -55,8 +60,12 @@ namespace ProyectoLibro
             PrestamoDetalle pd = new PrestamoDetalle();
             pd.cantidad = Convert.ToDouble(txtCantidad.Text);
             pd.libro = (Libro)cboLibro.SelectedItem;
+            pd.fecha_vencimiento = dtpFechaVencimiento.Value;
+            pd.estado = Estado.No_Entregado;
             prestamo.detalle_prestamo.Add(pd);
+            
             ActualizarDataGrid();
+           
 
             LimpiarFormulario();
         }
@@ -67,18 +76,19 @@ namespace ProyectoLibro
             prestamo.detalle_prestamo.Remove(pd);
             ActualizarDataGrid();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        
+        public void button1_Click(object sender, EventArgs e)
         {
+            
             prestamo.fecha_prestamo = dtpFechaPrestamo.Value.Date;
-            prestamo.cliente = (Cliente)cboCliente.SelectedItem;
-
+            prestamo.cliente = (Cliente)cboNroDocumento.SelectedItem;
             Prestamo.AgregarPrestamo(prestamo);
             MessageBox.Show("El prestamo ha sido guardado con éxito");
             LimpiarFormulario();
             dtgDetallePrestamo.DataSource = null;
             dtpFechaPrestamo.Value = System.DateTime.Now;
-            cboCliente.SelectedItem = null;
+            cboNroDocumento.SelectedItem = null;
+           
             prestamo = new Prestamo();
         }
 
@@ -86,6 +96,14 @@ namespace ProyectoLibro
         {
             LimpiarFormulario();
         }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+      
+        
     }
 }
 

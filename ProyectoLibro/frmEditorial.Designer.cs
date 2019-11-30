@@ -49,7 +49,8 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(251, 41);
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitulo.Location = new System.Drawing.Point(599, 173);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(309, 33);
@@ -59,7 +60,8 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(122, 153);
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblNombre.Location = new System.Drawing.Point(470, 285);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 20);
@@ -69,7 +71,8 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(122, 189);
+            this.lblDireccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblDireccion.Location = new System.Drawing.Point(470, 321);
             this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(75, 20);
@@ -79,7 +82,8 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(122, 225);
+            this.lblTelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTelefono.Location = new System.Drawing.Point(470, 357);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(71, 20);
@@ -88,7 +92,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(213, 150);
+            this.txtNombre.Location = new System.Drawing.Point(561, 282);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(302, 26);
@@ -96,7 +100,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(213, 186);
+            this.txtDireccion.Location = new System.Drawing.Point(561, 318);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(302, 26);
@@ -104,7 +108,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(213, 222);
+            this.txtTelefono.Location = new System.Drawing.Point(561, 354);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(302, 26);
@@ -112,7 +116,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(108, 297);
+            this.btnAgregar.Location = new System.Drawing.Point(456, 429);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(112, 55);
@@ -123,7 +127,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(257, 297);
+            this.btnModificar.Location = new System.Drawing.Point(605, 429);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(112, 55);
@@ -134,7 +138,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(404, 297);
+            this.btnEliminar.Location = new System.Drawing.Point(752, 429);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 57);
@@ -147,16 +151,16 @@
             // 
             this.lstEditorial.FormattingEnabled = true;
             this.lstEditorial.ItemHeight = 20;
-            this.lstEditorial.Location = new System.Drawing.Point(108, 386);
+            this.lstEditorial.Location = new System.Drawing.Point(474, 518);
             this.lstEditorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstEditorial.Name = "lstEditorial";
             this.lstEditorial.Size = new System.Drawing.Size(548, 144);
             this.lstEditorial.TabIndex = 10;
-            this.lstEditorial.SelectedIndexChanged += new System.EventHandler(this.lstEditorial_SelectedIndexChanged);
+            this.lstEditorial.Click += new System.EventHandler(this.lstEditorial_Click);
             // 
             // btnlimpiar
             // 
-            this.btnlimpiar.Location = new System.Drawing.Point(544, 299);
+            this.btnlimpiar.Location = new System.Drawing.Point(892, 431);
             this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(112, 55);
@@ -167,7 +171,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(213, 114);
+            this.txtId.Location = new System.Drawing.Point(561, 246);
             this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(302, 26);
@@ -176,7 +180,8 @@
             // lblid
             // 
             this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(122, 117);
+            this.lblid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblid.Location = new System.Drawing.Point(470, 249);
             this.lblid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(23, 20);
@@ -185,7 +190,7 @@
             // 
             // btnsalir
             // 
-            this.btnsalir.Location = new System.Drawing.Point(678, 475);
+            this.btnsalir.Location = new System.Drawing.Point(1026, 607);
             this.btnsalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(112, 55);
@@ -198,8 +203,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(816, 591);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.ClientSize = new System.Drawing.Size(1472, 963);
             this.Controls.Add(this.btnsalir);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblid);
@@ -215,6 +220,7 @@
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmEditorial";
             this.Text = "frmEditorial";

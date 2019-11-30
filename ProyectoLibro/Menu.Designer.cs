@@ -1,6 +1,6 @@
 ﻿namespace ProyectoLibro
 {
-    partial class frmMenu
+    partial class frmMenuPrincipal
     {
         /// <summary>
         /// Required designer variable.

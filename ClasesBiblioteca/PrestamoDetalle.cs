@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace ClasesBiblioteca
 {
+
+    public enum Estado
+    {
+        Entregado,
+        No_Entregado
+    }
+
     public class PrestamoDetalle
     {
         public double cantidad { get; set; }
         public Libro libro { get; set; }
-        public DateTime fecha_devolucion { get; set; }
+        public DateTime fecha_vencimiento { get; set; }
+
+        public Estado estado { get; set; }
 
     }
 }
