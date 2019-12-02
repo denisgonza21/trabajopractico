@@ -18,21 +18,7 @@ namespace ProyectoLibro
             InitializeComponent();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            Autor autor = new Autor();
-            autor.nroDocumento = txtNroDocumento.Text;
-            autor.nombre = txtNombre.Text;
-            autor.direccion = txtDireccion.Text;
-            autor.telefono = txtTelefono.Text;
-
-
-
-            Autor.AgregarAutor(autor);
-            LimpiarFormulario();
-            ActualizarListaAutores();
-        }
-
+        
         private void LimpiarFormulario()
         {
             txtId.Text = "";
@@ -53,14 +39,56 @@ namespace ProyectoLibro
         {
             ActualizarListaAutores();
             txtId.Enabled = false;
+            txtNroDocumento.Focus();
         }
 
-        private void btnsalir_Click(object sender, EventArgs e)
+       
+        private Autor ObtenerAutorFormulario()
         {
-            this.Close();
+            Autor autor = new Autor();
+            autor.id = Convert.ToInt16(txtId.Text);
+            autor.nroDocumento = txtNroDocumento.Text;
+            autor.nombre = txtNombre.Text;
+            autor.direccion = txtDireccion.Text;
+            autor.telefono = txtTelefono.Text;
+            return autor;
+
+
+
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+       
+
+        private void lstAutor_Click(object sender, EventArgs e)
+        {
+            Autor autor = (Autor)lstAutor.SelectedItem;
+
+            if (autor != null)
+            {
+                txtId.Text = Convert.ToString(autor.id);
+                txtNroDocumento.Text = autor.nroDocumento;
+                txtNombre.Text = autor.nombre;
+                txtDireccion.Text = autor.direccion;
+                txtTelefono.Text = autor.telefono;
+            }
+        }
+
+        private void btnAgregar2_Click(object sender, EventArgs e)
+        {
+            Autor autor = new Autor();
+            autor.nroDocumento = txtNroDocumento.Text;
+            autor.nombre = txtNombre.Text;
+            autor.direccion = txtDireccion.Text;
+            autor.telefono = txtTelefono.Text;
+
+
+
+            Autor.AgregarAutor(autor);
+            LimpiarFormulario();
+            ActualizarListaAutores();
+        }
+
+        private void btnModificar2_Click(object sender, EventArgs e)
         {
             Autor autor = (Autor)lstAutor.SelectedItem;
             if (autor != null)
@@ -79,21 +107,7 @@ namespace ProyectoLibro
             }
         }
 
-        private Autor ObtenerAutorFormulario()
-        {
-            Autor autor = new Autor();
-            autor.id = Convert.ToInt16(txtId.Text);
-            autor.nroDocumento = txtNroDocumento.Text;
-            autor.nombre = txtNombre.Text;
-            autor.direccion = txtDireccion.Text;
-            autor.telefono = txtTelefono.Text;
-            return autor;
-
-
-
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar2_Click(object sender, EventArgs e)
         {
             Autor autor = (Autor)lstAutor.SelectedItem;
             if (autor != null)
@@ -109,25 +123,14 @@ namespace ProyectoLibro
             }
         }
 
-        private void btnlimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar2_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();
         }
 
-       
-
-        private void lstAutor_Click(object sender, EventArgs e)
+        private void btnSalir2_Click(object sender, EventArgs e)
         {
-            Autor autor = (Autor)lstAutor.SelectedItem;
-
-            if (autor != null)
-            {
-                txtId.Text = Convert.ToString(autor.id);
-                txtNroDocumento.Text = autor.nroDocumento;
-                txtNombre.Text = autor.nombre;
-                txtDireccion.Text = autor.direccion;
-                txtTelefono.Text = autor.telefono;
-            }
+            this.Close();
         }
     }
 }

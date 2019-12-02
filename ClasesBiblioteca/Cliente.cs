@@ -150,7 +150,7 @@ namespace ClasesBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCMD = "Select * from cliente";
+                string textoCMD = "Select * from cliente Order by nroDocumento ASC";
                 SqlCommand cmd = new SqlCommand(textoCMD, con);
                 SqlDataReader electorDeDatos = cmd.ExecuteReader();
 

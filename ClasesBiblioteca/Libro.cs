@@ -120,7 +120,7 @@ namespace ClasesBiblioteca
             }
         }
 
-        public static Libro ObtenerlLibros(int id)
+        public static Libro ObtenerLibros(int id)
         {
             Libro libro = null;
 

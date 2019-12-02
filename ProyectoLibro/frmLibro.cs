@@ -25,6 +25,7 @@ namespace ProyectoLibro
             cmbEditorial.SelectedItem = null;
             txtcantEjemplares.Text = "";
             txtcantDisponible.Text = "";
+            txtId.Text = "";
 
         }
 
@@ -34,24 +35,7 @@ namespace ProyectoLibro
             lstLibro.DataSource = Libro.ObtenerLibros();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            Libro libro = (Libro)lstLibro.SelectedItem;
-            if (libro != null)
-            {
-                int index = lstLibro.SelectedIndex;
-                Libro Lib = ObtenerLibroFormulario();
-                Libro.EditarLibro(index, Lib);
-
-                ActualizarListaLibros();
-                LimpiarFormulario();
-                
-            }
-            else
-            {
-                MessageBox.Show("Ojo, Selecciona un Item");
-            }
-        }
+       
 
         private Libro ObtenerLibroFormulario()
         {
@@ -78,6 +62,7 @@ namespace ProyectoLibro
             cmbEditorial.SelectedItem = null;
             txtId.Enabled = false;
             ActualizarListaLibros();
+            txtNombre.Focus();
         }
 
         private void btnsalir_Click(object sender, EventArgs e)
@@ -85,44 +70,11 @@ namespace ProyectoLibro
             this.Close();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            Libro libro = (Libro)lstLibro.SelectedItem;
-            if (libro != null)
-            {
-                Libro p = (Libro)lstLibro.SelectedItem;
-                Libro.EliminarLibro(p);
-                ActualizarListaLibros();
-                LimpiarFormulario();
-            }
-            else
-            {
-                MessageBox.Show("Ojo, Selecciona un Item");
-            }
-        }
-
-        private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarFormulario();
-        }
+       
 
        
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
-        {
-            Libro libro = new Libro();
-            libro.nombre = txtNombre.Text;
-            libro.editorial = (Editorial)cmbEditorial.SelectedItem;
-            libro.autor = (Autor)cmbAutor.SelectedItem;
-            libro.cantidad_ejemplares = Convert.ToInt32(txtcantEjemplares.Text);
-            libro.cantidad_disponible = Convert.ToInt32(txtcantDisponible.Text);
-
-
-
-            Libro.AgregarLibro(libro);
-            LimpiarFormulario();
-            ActualizarListaLibros();
-        }
+        
 
         private void lstLibro_Click(object sender, EventArgs e)
         {
@@ -139,6 +91,67 @@ namespace ProyectoLibro
                 int cant2 = libro.cantidad_disponible;
                 txtcantDisponible.Text = Convert.ToString(cant2);
             }
+        }
+
+        private void btnAgregar2_Click(object sender, EventArgs e)
+        {
+            Libro libro = new Libro();
+            libro.nombre = txtNombre.Text;
+            libro.editorial = (Editorial)cmbEditorial.SelectedItem;
+            libro.autor = (Autor)cmbAutor.SelectedItem;
+            libro.cantidad_ejemplares = Convert.ToInt32(txtcantEjemplares.Text);
+            libro.cantidad_disponible = Convert.ToInt32(txtcantDisponible.Text);
+
+
+
+            Libro.AgregarLibro(libro);
+            LimpiarFormulario();
+            ActualizarListaLibros();
+        }
+
+        private void btnModificar2_Click(object sender, EventArgs e)
+        {
+            Libro libro = (Libro)lstLibro.SelectedItem;
+            if (libro != null)
+            {
+                int index = lstLibro.SelectedIndex;
+                Libro Lib = ObtenerLibroFormulario();
+                Libro.EditarLibro(index, Lib);
+
+                ActualizarListaLibros();
+                LimpiarFormulario();
+
+            }
+            else
+            {
+                MessageBox.Show("Ojo, Selecciona un Item");
+            }
+        }
+
+        private void btnEliminar2_Click(object sender, EventArgs e)
+        {
+            Libro libro = (Libro)lstLibro.SelectedItem;
+            if (libro != null)
+            {
+                Libro p = (Libro)lstLibro.SelectedItem;
+                Libro.EliminarLibro(p);
+                ActualizarListaLibros();
+                LimpiarFormulario();
+            }
+            else
+            {
+                MessageBox.Show("Ojo, Selecciona un Item");
+            }
+        }
+
+        private void btnLimpiar2_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
+        }
+
+        private void btnSalir2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

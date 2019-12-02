@@ -100,7 +100,7 @@
             // 
             this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
             this.libroToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
-            this.libroToolStripMenuItem.Text = "Libro";
+            this.libroToolStripMenuItem.Text = "Devolucion";
             this.libroToolStripMenuItem.Click += new System.EventHandler(this.libroToolStripMenuItem_Click);
             // 
             // operacionesToolStripMenuItem

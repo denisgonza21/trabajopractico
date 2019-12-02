@@ -125,6 +125,7 @@
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(270, 26);
             this.dtpFechaIngreso.TabIndex = 6;
+            this.dtpFechaIngreso.TabStop = false;
             // 
             // txtDocumento
             // 
@@ -132,7 +133,7 @@
             this.txtDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(270, 26);
-            this.txtDocumento.TabIndex = 7;
+            this.txtDocumento.TabIndex = 1;
             // 
             // txtNombre
             // 
@@ -140,7 +141,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(270, 26);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtDireccion
             // 
@@ -148,7 +149,7 @@
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(270, 26);
-            this.txtDireccion.TabIndex = 9;
+            this.txtDireccion.TabIndex = 3;
             // 
             // txtTelefono
             // 
@@ -156,7 +157,7 @@
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(270, 26);
-            this.txtTelefono.TabIndex = 10;
+            this.txtTelefono.TabIndex = 4;
             // 
             // lstCliente
             // 
@@ -168,6 +169,7 @@
             this.lstCliente.ScrollAlwaysVisible = true;
             this.lstCliente.Size = new System.Drawing.Size(636, 124);
             this.lstCliente.TabIndex = 20;
+            this.lstCliente.TabStop = false;
             this.lstCliente.Click += new System.EventHandler(this.lstCliente_Click);
             // 
             // label1
@@ -188,6 +190,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(270, 26);
             this.txtId.TabIndex = 27;
+            this.txtId.TabStop = false;
             // 
             // btnAgregar2
             // 

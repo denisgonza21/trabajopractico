@@ -83,7 +83,58 @@ namespace ClasesBiblioteca
             listaPrestamos.Remove(p);
         }
 
-       
+        public static Prestamo ObtenerPrestamos(int id)
+        {
+            Prestamo prestamo = null;
+
+            if (listaPrestamos.Count == 0)
+            {
+                Prestamo.ObtenerPrestamos();
+            }
+
+            foreach (Prestamo e in listaPrestamos)
+            {
+                if (e.id == id)
+                {
+                    prestamo = e;
+                    break;
+                }
+            }
+
+            return prestamo;
+        }
+
+        public static List<Prestamo> ObtenerPrestamos()
+        {
+
+
+            Prestamo prestamo;
+            listaPrestamos.Clear();
+            using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
+
+            {
+                con.Open();
+                string textoCMD = "Select * from Prestamo where id=@id";
+
+                SqlCommand cmd = new SqlCommand(textoCMD, con);
+
+                SqlDataReader elLectorDeDatos = cmd.ExecuteReader();
+
+                while (elLectorDeDatos.Read())
+                {
+                    prestamo = new Prestamo();
+                    prestamo.id = elLectorDeDatos.GetInt32(0);
+                    prestamo.cliente.id = elLectorDeDatos.GetInt32(1);
+                    
+
+                    listaPrestamos.Add(prestamo);
+                }
+
+                return listaPrestamos;
+
+            }
+
+        }
 
     }
 }

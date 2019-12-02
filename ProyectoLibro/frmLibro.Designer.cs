@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLibro));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblAutor = new System.Windows.Forms.Label();
@@ -39,26 +40,26 @@
             this.txtcantEjemplares = new System.Windows.Forms.TextBox();
             this.cmbEditorial = new System.Windows.Forms.ComboBox();
             this.cmbAutor = new System.Windows.Forms.ComboBox();
-            this.btnsalir = new System.Windows.Forms.Button();
-            this.btnlimpiar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.lstLibro = new System.Windows.Forms.ListBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
+            this.btnSalir2 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnLimpiar2 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnEliminar2 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnModificar2 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnAgregar2 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitulo.Location = new System.Drawing.Point(696, 169);
+            this.lblTitulo.Location = new System.Drawing.Point(686, 138);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTitulo.Size = new System.Drawing.Size(252, 33);
+            this.lblTitulo.Size = new System.Drawing.Size(344, 46);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Registro de Libros";
             // 
@@ -123,7 +124,7 @@
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(314, 26);
-            this.txtNombre.TabIndex = 6;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtcantDisponible
             // 
@@ -131,7 +132,7 @@
             this.txtcantDisponible.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcantDisponible.Name = "txtcantDisponible";
             this.txtcantDisponible.Size = new System.Drawing.Size(90, 26);
-            this.txtcantDisponible.TabIndex = 7;
+            this.txtcantDisponible.TabIndex = 5;
             // 
             // txtcantEjemplares
             // 
@@ -139,7 +140,7 @@
             this.txtcantEjemplares.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtcantEjemplares.Name = "txtcantEjemplares";
             this.txtcantEjemplares.Size = new System.Drawing.Size(92, 26);
-            this.txtcantEjemplares.TabIndex = 8;
+            this.txtcantEjemplares.TabIndex = 4;
             // 
             // cmbEditorial
             // 
@@ -148,7 +149,7 @@
             this.cmbEditorial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbEditorial.Name = "cmbEditorial";
             this.cmbEditorial.Size = new System.Drawing.Size(314, 28);
-            this.cmbEditorial.TabIndex = 9;
+            this.cmbEditorial.TabIndex = 3;
             // 
             // cmbAutor
             // 
@@ -157,62 +158,7 @@
             this.cmbAutor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbAutor.Name = "cmbAutor";
             this.cmbAutor.Size = new System.Drawing.Size(314, 28);
-            this.cmbAutor.TabIndex = 10;
-            // 
-            // btnsalir
-            // 
-            this.btnsalir.Location = new System.Drawing.Point(1020, 636);
-            this.btnsalir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(112, 55);
-            this.btnsalir.TabIndex = 31;
-            this.btnsalir.Text = "Salir";
-            this.btnsalir.UseVisualStyleBackColor = true;
-            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
-            // 
-            // btnlimpiar
-            // 
-            this.btnlimpiar.Location = new System.Drawing.Point(852, 466);
-            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Size = new System.Drawing.Size(112, 55);
-            this.btnlimpiar.TabIndex = 30;
-            this.btnlimpiar.Text = "Limpiar";
-            this.btnlimpiar.UseVisualStyleBackColor = true;
-            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(712, 463);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(112, 57);
-            this.btnEliminar.TabIndex = 29;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(564, 463);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(112, 55);
-            this.btnModificar.TabIndex = 28;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(416, 463);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(112, 55);
-            this.btnAgregar.TabIndex = 27;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
+            this.cmbAutor.TabIndex = 2;
             // 
             // lstLibro
             // 
@@ -223,6 +169,7 @@
             this.lstLibro.Name = "lstLibro";
             this.lstLibro.Size = new System.Drawing.Size(636, 124);
             this.lstLibro.TabIndex = 26;
+            this.lstLibro.TabStop = false;
             this.lstLibro.Click += new System.EventHandler(this.lstLibro_Click);
             // 
             // txtId
@@ -232,6 +179,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(314, 26);
             this.txtId.TabIndex = 33;
+            this.txtId.TabStop = false;
             // 
             // lblId
             // 
@@ -244,19 +192,154 @@
             this.lblId.TabIndex = 32;
             this.lblId.Text = "Id";
             // 
+            // btnSalir2
+            // 
+            this.btnSalir2.ActiveBorderThickness = 1;
+            this.btnSalir2.ActiveCornerRadius = 20;
+            this.btnSalir2.ActiveFillColor = System.Drawing.Color.Teal;
+            this.btnSalir2.ActiveForecolor = System.Drawing.Color.White;
+            this.btnSalir2.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnSalir2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.btnSalir2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir2.BackgroundImage")));
+            this.btnSalir2.ButtonText = "Salir";
+            this.btnSalir2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnSalir2.IdleBorderThickness = 1;
+            this.btnSalir2.IdleCornerRadius = 20;
+            this.btnSalir2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
+            this.btnSalir2.IdleForecolor = System.Drawing.Color.White;
+            this.btnSalir2.IdleLineColor = System.Drawing.Color.White;
+            this.btnSalir2.Location = new System.Drawing.Point(1048, 610);
+            this.btnSalir2.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSalir2.Name = "btnSalir2";
+            this.btnSalir2.Size = new System.Drawing.Size(145, 73);
+            this.btnSalir2.TabIndex = 50;
+            this.btnSalir2.TabStop = false;
+            this.btnSalir2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSalir2.Click += new System.EventHandler(this.btnSalir2_Click);
+            // 
+            // btnLimpiar2
+            // 
+            this.btnLimpiar2.ActiveBorderThickness = 1;
+            this.btnLimpiar2.ActiveCornerRadius = 20;
+            this.btnLimpiar2.ActiveFillColor = System.Drawing.Color.Teal;
+            this.btnLimpiar2.ActiveForecolor = System.Drawing.Color.White;
+            this.btnLimpiar2.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnLimpiar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.btnLimpiar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar2.BackgroundImage")));
+            this.btnLimpiar2.ButtonText = "Limpiar";
+            this.btnLimpiar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnLimpiar2.IdleBorderThickness = 1;
+            this.btnLimpiar2.IdleCornerRadius = 20;
+            this.btnLimpiar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
+            this.btnLimpiar2.IdleForecolor = System.Drawing.Color.White;
+            this.btnLimpiar2.IdleLineColor = System.Drawing.Color.White;
+            this.btnLimpiar2.Location = new System.Drawing.Point(877, 466);
+            this.btnLimpiar2.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLimpiar2.Name = "btnLimpiar2";
+            this.btnLimpiar2.Size = new System.Drawing.Size(145, 73);
+            this.btnLimpiar2.TabIndex = 49;
+            this.btnLimpiar2.TabStop = false;
+            this.btnLimpiar2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLimpiar2.Click += new System.EventHandler(this.btnLimpiar2_Click);
+            // 
+            // btnEliminar2
+            // 
+            this.btnEliminar2.ActiveBorderThickness = 1;
+            this.btnEliminar2.ActiveCornerRadius = 20;
+            this.btnEliminar2.ActiveFillColor = System.Drawing.Color.Teal;
+            this.btnEliminar2.ActiveForecolor = System.Drawing.Color.White;
+            this.btnEliminar2.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnEliminar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.btnEliminar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar2.BackgroundImage")));
+            this.btnEliminar2.ButtonText = "Eliminar";
+            this.btnEliminar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnEliminar2.IdleBorderThickness = 1;
+            this.btnEliminar2.IdleCornerRadius = 20;
+            this.btnEliminar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
+            this.btnEliminar2.IdleForecolor = System.Drawing.Color.White;
+            this.btnEliminar2.IdleLineColor = System.Drawing.Color.White;
+            this.btnEliminar2.Location = new System.Drawing.Point(722, 466);
+            this.btnEliminar2.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEliminar2.Name = "btnEliminar2";
+            this.btnEliminar2.Size = new System.Drawing.Size(145, 73);
+            this.btnEliminar2.TabIndex = 48;
+            this.btnEliminar2.TabStop = false;
+            this.btnEliminar2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnEliminar2.Click += new System.EventHandler(this.btnEliminar2_Click);
+            // 
+            // btnModificar2
+            // 
+            this.btnModificar2.ActiveBorderThickness = 1;
+            this.btnModificar2.ActiveCornerRadius = 20;
+            this.btnModificar2.ActiveFillColor = System.Drawing.Color.Teal;
+            this.btnModificar2.ActiveForecolor = System.Drawing.Color.White;
+            this.btnModificar2.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnModificar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.btnModificar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar2.BackgroundImage")));
+            this.btnModificar2.ButtonText = "Modificar";
+            this.btnModificar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnModificar2.IdleBorderThickness = 1;
+            this.btnModificar2.IdleCornerRadius = 20;
+            this.btnModificar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
+            this.btnModificar2.IdleForecolor = System.Drawing.Color.White;
+            this.btnModificar2.IdleLineColor = System.Drawing.Color.White;
+            this.btnModificar2.Location = new System.Drawing.Point(567, 466);
+            this.btnModificar2.Margin = new System.Windows.Forms.Padding(5);
+            this.btnModificar2.Name = "btnModificar2";
+            this.btnModificar2.Size = new System.Drawing.Size(145, 73);
+            this.btnModificar2.TabIndex = 47;
+            this.btnModificar2.TabStop = false;
+            this.btnModificar2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnModificar2.Click += new System.EventHandler(this.btnModificar2_Click);
+            // 
+            // btnAgregar2
+            // 
+            this.btnAgregar2.ActiveBorderThickness = 1;
+            this.btnAgregar2.ActiveCornerRadius = 20;
+            this.btnAgregar2.ActiveFillColor = System.Drawing.Color.Teal;
+            this.btnAgregar2.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAgregar2.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.btnAgregar2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregar2.BackgroundImage")));
+            this.btnAgregar2.ButtonText = "Agregar";
+            this.btnAgregar2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnAgregar2.IdleBorderThickness = 1;
+            this.btnAgregar2.IdleCornerRadius = 20;
+            this.btnAgregar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
+            this.btnAgregar2.IdleForecolor = System.Drawing.Color.White;
+            this.btnAgregar2.IdleLineColor = System.Drawing.Color.White;
+            this.btnAgregar2.Location = new System.Drawing.Point(412, 466);
+            this.btnAgregar2.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAgregar2.Name = "btnAgregar2";
+            this.btnAgregar2.Size = new System.Drawing.Size(145, 73);
+            this.btnAgregar2.TabIndex = 46;
+            this.btnAgregar2.TabStop = false;
+            this.btnAgregar2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAgregar2.Click += new System.EventHandler(this.btnAgregar2_Click);
+            // 
             // frmLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1472, 963);
+            this.Controls.Add(this.btnSalir2);
+            this.Controls.Add(this.btnLimpiar2);
+            this.Controls.Add(this.btnEliminar2);
+            this.Controls.Add(this.btnModificar2);
+            this.Controls.Add(this.btnAgregar2);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.btnsalir);
-            this.Controls.Add(this.btnlimpiar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lstLibro);
             this.Controls.Add(this.cmbAutor);
             this.Controls.Add(this.cmbEditorial);
@@ -292,13 +375,13 @@
         private System.Windows.Forms.TextBox txtcantEjemplares;
         private System.Windows.Forms.ComboBox cmbEditorial;
         private System.Windows.Forms.ComboBox cmbAutor;
-        private System.Windows.Forms.Button btnsalir;
-        private System.Windows.Forms.Button btnlimpiar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ListBox lstLibro;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label lblId;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnSalir2;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnLimpiar2;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnEliminar2;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnModificar2;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAgregar2;
     }
 }

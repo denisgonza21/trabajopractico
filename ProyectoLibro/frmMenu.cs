@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoLibro
 {
-    public partial class frmForm : Form
+    public partial class frmMenu : Form
     {
-        public frmForm()
+        public frmMenu()
         {
             InitializeComponent();
         }
@@ -79,6 +79,7 @@ namespace ProyectoLibro
                 SidebarWrapper.Width = 90;
                 LineaSidebar.Width = 52;
                 AnimacionSidebar.Show(Sidebar);
+                
             }
             else
             {
@@ -88,6 +89,7 @@ namespace ProyectoLibro
                 LineaSidebar.Width = 252;
                 AnimacionSidebarBack.Show(Sidebar);
             }
+           
         }
 
         private void Minimizar_Click(object sender, EventArgs e)
@@ -96,6 +98,11 @@ namespace ProyectoLibro
         }
 
         private void SidebarWrapper_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelChart_Paint(object sender, PaintEventArgs e)
         {
 
         }

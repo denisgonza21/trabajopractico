@@ -18,20 +18,7 @@ namespace ProyectoLibro
             InitializeComponent();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = new Cliente();
-            cliente.nroDocumento = txtDocumento.Text;
-            cliente.nombre = txtNombre.Text;
-            cliente.direccion = txtDireccion.Text;
-            cliente.telefono = txtTelefono.Text;
-            cliente.fecha_inscripcion = dtpFechaIngreso.Value.Date;
-
-
-            Cliente.AgregarCliente(cliente);
-            LimpiarFormulario();
-            ActualizarListaCliente();
-        }
+       
 
         private void LimpiarFormulario()
         {
@@ -51,42 +38,14 @@ namespace ProyectoLibro
             lstCliente.DataSource = Cliente.ObtenerCliente();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-            int index = lstCliente.SelectedIndex;
-            Cliente c = ObtenerClienteFormulario();
-            Cliente.EditarCliente(index, c);
-
-
-            LimpiarFormulario();
-            ActualizarListaCliente();
-        }
-
-        private void btnsalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (this.lstCliente.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Favor seleccione una fila");
-            }
-            else
-            {
-                Cliente c = (Cliente)lstCliente.SelectedItem;
-                Cliente.EliminarCliente(c);
-                ActualizarListaCliente();
-                LimpiarFormulario();
-            }
-        }
+        
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
             txtId.Enabled=false;
             ActualizarListaCliente();
+            txtDocumento.Focus();
+            dtpFechaIngreso.Enabled = false;
         }
 
 
@@ -104,11 +63,7 @@ namespace ProyectoLibro
 
     
 
-        private void btnlimpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarFormulario();
-        }
-
+       
        
 
         private void lstCliente_Click(object sender, EventArgs e)

@@ -83,7 +83,7 @@ namespace ClasesBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCMD = "UPDATE Editorial SET nombre = @nombre, direccion = @direccion, telefono = @telefono,  where id = @id";
+                string textoCMD = "UPDATE Editorial SET nombre = @nombre, direccion = @direccion, telefono = @telefono  where id = @id";
 
                 SqlCommand cmd = new SqlCommand(textoCMD, con);
 
