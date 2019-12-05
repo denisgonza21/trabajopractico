@@ -50,6 +50,8 @@
             this.btnEliminar2 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnModificar2 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAgregar2 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.lblContrasena = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtTelefono
@@ -347,12 +349,34 @@
             this.btnAgregar2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAgregar2.Click += new System.EventHandler(this.btnAgregar2_Click);
             // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Location = new System.Drawing.Point(627, 439);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.Size = new System.Drawing.Size(319, 26);
+            this.txtContrasena.TabIndex = 46;
+            this.txtContrasena.UseSystemPasswordChar = true;
+            // 
+            // lblContrasena
+            // 
+            this.lblContrasena.AutoSize = true;
+            this.lblContrasena.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblContrasena.Location = new System.Drawing.Point(461, 443);
+            this.lblContrasena.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContrasena.Name = "lblContrasena";
+            this.lblContrasena.Size = new System.Drawing.Size(92, 20);
+            this.lblContrasena.TabIndex = 47;
+            this.lblContrasena.Text = "Contraseña";
+            // 
             // frmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1472, 963);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.lblContrasena);
             this.Controls.Add(this.btnSalir2);
             this.Controls.Add(this.btnLimpiar2);
             this.Controls.Add(this.btnEliminar2);
@@ -406,5 +430,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnEliminar2;
         private Bunifu.Framework.UI.BunifuThinButton2 btnModificar2;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAgregar2;
+        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Label lblContrasena;
     }
 }

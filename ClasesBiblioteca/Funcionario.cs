@@ -15,7 +15,8 @@ namespace ClasesBiblioteca
         public string telefono { get; set; }
         public DateTime fechaInicio { get; set; }
         public string usuario { get; set; }
-        
+        public string constrasena { get; set; }
+
 
 
         public static List<Funcionario> listafuncionario = new List<Funcionario>();
@@ -27,7 +28,7 @@ namespace ClasesBiblioteca
 
             {
                 con.Open();
-                string textoCmd = "insert into Funcionario (nroDocumento, nombre, direccion, telefono, fechaInicio, usuario) VALUES (@nroDocumento, @nombre, @direccion, @telefono, @fechaInicio, @usuario)";
+                string textoCmd = "insert into Funcionario (nroDocumento, nombre, direccion, telefono, fechaInicio, usuario, contrasena) VALUES (@nroDocumento, @nombre, @direccion, @telefono, @fechaInicio, @usuario, @contrasena)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 SqlParameter p1 = new SqlParameter("@nroDocumento", fun.nroDocumento);
@@ -36,6 +37,7 @@ namespace ClasesBiblioteca
                 SqlParameter p4 = new SqlParameter("@telefono", fun.telefono);
                 SqlParameter p5 = new SqlParameter("@fechaInicio", fun.fechaInicio);
                 SqlParameter p6 = new SqlParameter("@usuario", fun.usuario);
+                SqlParameter p7 = new SqlParameter("@contrasena", fun.constrasena);
 
 
 
@@ -45,6 +47,7 @@ namespace ClasesBiblioteca
                 p4.SqlDbType = SqlDbType.VarChar;
                 p5.SqlDbType = SqlDbType.DateTime;
                 p6.SqlDbType = SqlDbType.VarChar;
+                p7.SqlDbType = SqlDbType.VarChar;
 
 
                 cmd.Parameters.Add(p1);
@@ -53,6 +56,8 @@ namespace ClasesBiblioteca
                 cmd.Parameters.Add(p4);
                 cmd.Parameters.Add(p5);
                 cmd.Parameters.Add(p6);
+                cmd.Parameters.Add(p7);
+
 
 
 
@@ -75,9 +80,9 @@ namespace ClasesBiblioteca
                 string SENTENCIA_SQL = "delete from Funcionario where id = @id";
 
                 SqlCommand cmd = new SqlCommand(SENTENCIA_SQL, con);
-                SqlParameter p7 = new SqlParameter("@id", fun.id);
-                p7.SqlDbType = SqlDbType.Int;
-                cmd.Parameters.Add(p7);
+                SqlParameter p8 = new SqlParameter("@id", fun.id);
+                p8.SqlDbType = SqlDbType.Int;
+                cmd.Parameters.Add(p8);
 
                 cmd.ExecuteNonQuery();
             }
@@ -89,7 +94,7 @@ namespace ClasesBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCMD = "UPDATE Funcionario SET nroDocumento = @nroDocumento, nombre = @nombre, direccion = @direccion, telefono = @telefono, fechaInicio = @fechaInicio, usuario = @usuario   where id = @id";
+                string textoCMD = "UPDATE Funcionario SET nroDocumento = @nroDocumento, nombre = @nombre, direccion = @direccion, telefono = @telefono, fechaInicio = @fechaInicio, usuario = @usuario, contrasena = @contrasena  where id = @id";
 
                 SqlCommand cmd = new SqlCommand(textoCMD, con);
 
@@ -99,7 +104,8 @@ namespace ClasesBiblioteca
                 SqlParameter p4 = new SqlParameter("@telefono", fun.telefono);
                 SqlParameter p5 = new SqlParameter("@fechaInicio", fun.fechaInicio);
                 SqlParameter p6 = new SqlParameter("@usuario", fun.usuario);
-                SqlParameter p7 = new SqlParameter("@id", fun.id);
+                SqlParameter p7 = new SqlParameter("@contrasena", fun.constrasena);
+                SqlParameter p8 = new SqlParameter("@id", fun.id);
 
 
                 p1.SqlDbType = SqlDbType.VarChar;
@@ -108,7 +114,8 @@ namespace ClasesBiblioteca
                 p4.SqlDbType = SqlDbType.VarChar;
                 p5.SqlDbType = SqlDbType.DateTime;
                 p6.SqlDbType = SqlDbType.VarChar;
-                p7.SqlDbType = SqlDbType.Int;
+                p7.SqlDbType = SqlDbType.VarChar;
+                p8.SqlDbType = SqlDbType.Int;
 
                 cmd.Parameters.Add(p1);
                 cmd.Parameters.Add(p2);
@@ -117,6 +124,7 @@ namespace ClasesBiblioteca
                 cmd.Parameters.Add(p5);
                 cmd.Parameters.Add(p6);
                 cmd.Parameters.Add(p7);
+                cmd.Parameters.Add(p8);
 
                 cmd.ExecuteNonQuery();
             }
@@ -169,6 +177,7 @@ namespace ClasesBiblioteca
                     funcionario.telefono = elLectorDeDatos.GetString(4);
                     funcionario.fechaInicio = elLectorDeDatos.GetDateTime(5);
                     funcionario.usuario = elLectorDeDatos.GetString(6);
+                    funcionario.constrasena = elLectorDeDatos.GetString(7);
                     
                  
                     

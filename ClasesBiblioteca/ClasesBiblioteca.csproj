@@ -48,6 +48,7 @@
     <Compile Include="Editorial.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Libro.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Prestamo.cs" />
     <Compile Include="PrestamoDetalle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

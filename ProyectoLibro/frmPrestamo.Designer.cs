@@ -155,11 +155,11 @@
             this.dtgDetallePrestamo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDetallePrestamo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDetallePrestamo.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgDetallePrestamo.Location = new System.Drawing.Point(361, 523);
+            this.dtgDetallePrestamo.Location = new System.Drawing.Point(320, 523);
             this.dtgDetallePrestamo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgDetallePrestamo.Name = "dtgDetallePrestamo";
             this.dtgDetallePrestamo.RowTemplate.Height = 24;
-            this.dtgDetallePrestamo.Size = new System.Drawing.Size(630, 188);
+            this.dtgDetallePrestamo.Size = new System.Drawing.Size(692, 188);
             this.dtgDetallePrestamo.TabIndex = 32;
             this.dtgDetallePrestamo.TabStop = false;
             this.dtgDetallePrestamo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetallePrestamo_CellContentClick);

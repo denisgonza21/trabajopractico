@@ -44,6 +44,7 @@ namespace ProyectoLibro
             txtTelefono.Text = "";
             txtUsuario.Text = "";
             dtpFechaIngreso.Value = System.DateTime.Now;
+            txtContrasena.Text = "";
             
         }
 
@@ -59,6 +60,7 @@ namespace ProyectoLibro
             fun.telefono = txtTelefono.Text;
             fun.fechaInicio = dtpFechaIngreso.Value.Date;
             fun.usuario = txtUsuario.Text;
+            fun.constrasena = txtContrasena.Text;
             return fun;
         }
 
@@ -78,6 +80,7 @@ namespace ProyectoLibro
                 txtTelefono.Text = func.telefono;
                 dtpFechaIngreso.Value = func.fechaInicio;
                 txtUsuario.Text = func.usuario;
+                txtContrasena.Text = func.constrasena;
             }
         }
 
@@ -91,6 +94,7 @@ namespace ProyectoLibro
             fun.telefono = txtTelefono.Text;
             fun.usuario = txtUsuario.Text;
             fun.fechaInicio = dtpFechaIngreso.Value;
+            fun.constrasena = txtContrasena.Text;
 
 
 
