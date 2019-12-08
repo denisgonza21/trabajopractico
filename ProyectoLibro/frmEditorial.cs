@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClasesBiblioteca;
+using Bunifu;
+using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
@@ -74,50 +76,79 @@ namespace ProyectoLibro
 
         private void btnAgregar2_Click(object sender, EventArgs e)
         {
-            Editorial edi = new Editorial();
-            edi.nombre = txtNombre.Text;
-            edi.direccion = txtDireccion.Text;
-            edi.telefono = txtTelefono.Text;
+            try
+            {
+                if (ValidarCampos())
+                {
+                    Editorial edi = new Editorial();
+                    edi.nombre = txtNombre.Text;
+                    edi.direccion = txtDireccion.Text;
+                    edi.telefono = txtTelefono.Text;
 
 
 
-            Editorial.AgregarEditorial(edi);
-            LimpiarFormulario();
-            ActualizarListaEditoriales();
+                    Editorial.AgregarEditorial(edi);
+                    LimpiarFormulario();
+                    ActualizarListaEditoriales();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnModificar2_Click(object sender, EventArgs e)
         {
-            Editorial edito = (Editorial)lstEditorial.SelectedItem;
-            if (edito != null)
+            try
             {
-                int index = lstEditorial.SelectedIndex;
-                Editorial ed = ObtenerEditorialFormulario();
-                Editorial.EditarEditorial(index, ed);
+                if (ValidarCampos())
+                {
+                    Editorial edito = (Editorial)lstEditorial.SelectedItem;
+                    if (edito != null)
+                    {
+                        int index = lstEditorial.SelectedIndex;
+                        Editorial ed = ObtenerEditorialFormulario();
+                        Editorial.EditarEditorial(index, ed);
 
 
-                LimpiarFormulario();
-                ActualizarListaEditoriales();
+                        LimpiarFormulario();
+                        ActualizarListaEditoriales();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ojo, Selecciona un Item");
+                    }
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Ojo, Selecciona un Item");
+                MessageBox.Show(ex.ToString());
             }
         }
 
+
         private void btnEliminar2_Click(object sender, EventArgs e)
         {
-            Editorial edito = (Editorial)lstEditorial.SelectedItem;
-            if (edito != null)
+            try
             {
-                Editorial p = (Editorial)lstEditorial.SelectedItem;
-                Editorial.EliminarEditorial(p);
-                ActualizarListaEditoriales();
-                LimpiarFormulario();
+                Editorial edito = (Editorial)lstEditorial.SelectedItem;
+                if (edito != null)
+                {
+                    Editorial p = (Editorial)lstEditorial.SelectedItem;
+                    Editorial.EliminarEditorial(p);
+                    ActualizarListaEditoriales();
+                    LimpiarFormulario();
+                }
+                else
+                {
+                    MessageBox.Show("Ojo, Selecciona un Item");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Ojo, Selecciona un Item");
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -129,6 +160,23 @@ namespace ProyectoLibro
         private void btnSalir2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El nombre no puede estar vacío", "Error");
+                txtNombre.Focus();
+                return false;
+            }
+            if (String.IsNullOrWhiteSpace(txtTelefono.Text))
+            {
+                MessageBox.Show("El telefono no puede estar vacío", "Error");
+                txtTelefono.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }

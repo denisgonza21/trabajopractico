@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClasesBiblioteca;
 using System.Data.SqlClient;
+using Bunifu;
+using BunifuAnimatorNS;
+
 
 namespace ProyectoLibro
 {
@@ -32,7 +35,7 @@ namespace ProyectoLibro
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtContraseña.isPassword = true;
-
+           
             btnIngresar.Focus();
 
         }

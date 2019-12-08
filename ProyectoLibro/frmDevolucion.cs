@@ -9,13 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClasesBiblioteca;
+using Bunifu;
+using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
     public partial class frmDevolucion : Form
     {
         
-       SqlConnection conexion = new SqlConnection("server = DENIS\\DENISSQLSERVER;Database = Biblioteca;User Id = sa;Password = 123");
+       SqlConnection conexion = new SqlConnection("server = RICARDO\\SQLEXPRESS;Database = Biblioteca;User Id = sa;Password = @lumno123");
         public SqlCommand comando;
         public frmDevolucion()
         {

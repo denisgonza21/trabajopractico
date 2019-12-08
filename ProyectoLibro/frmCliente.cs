@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu;
+using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
@@ -83,43 +85,71 @@ namespace ProyectoLibro
 
         private void btnAgregar2_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente();
-            cliente.nroDocumento = txtDocumento.Text;
-            cliente.nombre = txtNombre.Text;
-            cliente.direccion = txtDireccion.Text;
-            cliente.telefono = txtTelefono.Text;
-            cliente.fecha_inscripcion = dtpFechaIngreso.Value.Date;
+            try
+            {
+                if (ValidarCampos())
+                {
+                    Cliente cliente = new Cliente();
+                    cliente.nroDocumento = txtDocumento.Text;
+                    cliente.nombre = txtNombre.Text;
+                    cliente.direccion = txtDireccion.Text;
+                    cliente.telefono = txtTelefono.Text;
+                    cliente.fecha_inscripcion = dtpFechaIngreso.Value.Date;
 
 
-            Cliente.AgregarCliente(cliente);
-            LimpiarFormulario();
-            ActualizarListaCliente();
+                    Cliente.AgregarCliente(cliente);
+                    LimpiarFormulario();
+                    ActualizarListaCliente();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnModificar2_Click(object sender, EventArgs e)
         {
-            int index = lstCliente.SelectedIndex;
-            Cliente c = ObtenerClienteFormulario();
-            Cliente.EditarCliente(index, c);
+            try
+            {
+                if (ValidarCampos())
+                {
+                    int index = lstCliente.SelectedIndex;
+                    Cliente c = ObtenerClienteFormulario();
+                    Cliente.EditarCliente(index, c);
 
 
-            
-            ActualizarListaCliente();
-            LimpiarFormulario();
+
+                    ActualizarListaCliente();
+                    LimpiarFormulario();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
-
         private void btnEliminar2_Click(object sender, EventArgs e)
         {
-            if (this.lstCliente.SelectedItems.Count == 0)
+            try
             {
-                MessageBox.Show("Favor seleccione una fila");
+                if (this.lstCliente.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Favor seleccione una fila");
+                }
+                else
+                {
+                    Cliente c = (Cliente)lstCliente.SelectedItem;
+                    Cliente.EliminarCliente(c);
+                    ActualizarListaCliente();
+                    LimpiarFormulario();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Cliente c = (Cliente)lstCliente.SelectedItem;
-                Cliente.EliminarCliente(c);
-                ActualizarListaCliente();
-                LimpiarFormulario();
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -141,6 +171,29 @@ namespace ProyectoLibro
         private void btnSalir2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El nombre no puede estar vacío", "Error");
+                txtNombre.Focus();
+                return false;
+            }
+            if (String.IsNullOrWhiteSpace(txtDocumento.Text))
+            {
+                MessageBox.Show("El campo de Nro Documento no puede estar vacío", "Error");
+                txtDocumento.Focus();
+                return false;
+            }
+            if (String.IsNullOrWhiteSpace(txtTelefono.Text))
+            {
+                MessageBox.Show("El telefono no puede estar vacío", "Error");
+                txtTelefono.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }

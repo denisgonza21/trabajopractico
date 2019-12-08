@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Bunifu;
+using BunifuAnimatorNS;
 using ClasesBiblioteca;
 
 namespace ProyectoLibro
@@ -75,51 +77,81 @@ namespace ProyectoLibro
 
         private void btnAgregar2_Click(object sender, EventArgs e)
         {
-            Autor autor = new Autor();
-            autor.nroDocumento = txtNroDocumento.Text;
-            autor.nombre = txtNombre.Text;
-            autor.direccion = txtDireccion.Text;
-            autor.telefono = txtTelefono.Text;
+            try
+            {
+                if (ValidarCampos())
+                {
+                    Autor autor = new Autor();
+                    autor.nroDocumento = txtNroDocumento.Text;
+                    autor.nombre = txtNombre.Text;
+                    autor.direccion = txtDireccion.Text;
+                    autor.telefono = txtTelefono.Text;
 
 
 
-            Autor.AgregarAutor(autor);
-            LimpiarFormulario();
-            ActualizarListaAutores();
+                    Autor.AgregarAutor(autor);
+                    LimpiarFormulario();
+                    ActualizarListaAutores();
+                }
+                    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void btnModificar2_Click(object sender, EventArgs e)
         {
-            Autor autor = (Autor)lstAutor.SelectedItem;
-            if (autor != null)
+            try
             {
-                int index = lstAutor.SelectedIndex;
-                Autor a = ObtenerAutorFormulario();
-                Autor.EditarAutor(index, a);
+                if (ValidarCampos())
+                {
+                    Autor autor = (Autor)lstAutor.SelectedItem;
+                    if (autor != null)
+                    {
+                        int index = lstAutor.SelectedIndex;
+                        Autor a = ObtenerAutorFormulario();
+                        Autor.EditarAutor(index, a);
 
 
-                LimpiarFormulario();
-                ActualizarListaAutores();
+                        LimpiarFormulario();
+                        ActualizarListaAutores();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ojo, Selecciona un Item");
+                    }
+                }
+                    
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Ojo, Selecciona un Item");
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void btnEliminar2_Click(object sender, EventArgs e)
         {
-            Autor autor = (Autor)lstAutor.SelectedItem;
-            if (autor != null)
+            try
             {
-                Autor a = (Autor)lstAutor.SelectedItem;
-                Autor.EliminarAutor(a);
-                ActualizarListaAutores();
-                LimpiarFormulario();
+                Autor autor = (Autor)lstAutor.SelectedItem;
+                if (autor != null)
+                {
+                    Autor a = (Autor)lstAutor.SelectedItem;
+                    Autor.EliminarAutor(a);
+                    ActualizarListaAutores();
+                    LimpiarFormulario();
+                }
+                else
+                {
+                    MessageBox.Show("Ojo, Selecciona un Item");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Ojo, Selecciona un Item");
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -131,6 +163,23 @@ namespace ProyectoLibro
         private void btnSalir2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool ValidarCampos()
+        {
+            if (String.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El nombre no puede estar vacío", "Error");
+                txtNombre.Focus();
+                return false;
+            }
+            if (String.IsNullOrWhiteSpace(txtNroDocumento.Text))
+            {
+                MessageBox.Show("El campo de Nro Documento no puede estar vacío", "Error");
+                txtNroDocumento.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }

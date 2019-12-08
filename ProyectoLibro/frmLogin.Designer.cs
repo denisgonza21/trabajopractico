@@ -42,7 +42,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.White;
             this.txtUsuario.HintForeColor = System.Drawing.Color.White;
             this.txtUsuario.HintText = "Usuario";
@@ -51,10 +51,10 @@
             this.txtUsuario.LineIdleColor = System.Drawing.Color.White;
             this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.Teal;
             this.txtUsuario.LineThickness = 4;
-            this.txtUsuario.Location = new System.Drawing.Point(360, 273);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtUsuario.Location = new System.Drawing.Point(240, 164);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(357, 49);
+            this.txtUsuario.Size = new System.Drawing.Size(238, 45);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -70,10 +70,10 @@
             this.txtContraseña.LineIdleColor = System.Drawing.Color.White;
             this.txtContraseña.LineMouseHoverColor = System.Drawing.Color.Teal;
             this.txtContraseña.LineThickness = 4;
-            this.txtContraseña.Location = new System.Drawing.Point(360, 360);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtContraseña.Location = new System.Drawing.Point(240, 217);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(357, 49);
+            this.txtContraseña.Size = new System.Drawing.Size(238, 49);
             this.txtContraseña.TabIndex = 4;
             this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -95,10 +95,10 @@
             this.btnIngresar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
             this.btnIngresar.IdleForecolor = System.Drawing.Color.White;
             this.btnIngresar.IdleLineColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(372, 455);
+            this.btnIngresar.Location = new System.Drawing.Point(248, 296);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(5);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(316, 73);
+            this.btnIngresar.Size = new System.Drawing.Size(211, 47);
             this.btnIngresar.TabIndex = 1;
             this.btnIngresar.TabStop = false;
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,18 +109,18 @@
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(308, 711);
+            this.panel1.Size = new System.Drawing.Size(205, 462);
             this.panel1.TabIndex = 21;
             // 
             // Minimizar
             // 
             this.Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Minimizar.Image")));
-            this.Minimizar.Location = new System.Drawing.Point(709, 26);
-            this.Minimizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Minimizar.Location = new System.Drawing.Point(473, 17);
             this.Minimizar.Name = "Minimizar";
-            this.Minimizar.Size = new System.Drawing.Size(45, 46);
+            this.Minimizar.Size = new System.Drawing.Size(30, 30);
             this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Minimizar.TabIndex = 23;
             this.Minimizar.TabStop = false;
@@ -130,10 +130,9 @@
             // 
             this.Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Salir.Image = ((System.Drawing.Image)(resources.GetObject("Salir.Image")));
-            this.Salir.Location = new System.Drawing.Point(762, 26);
-            this.Salir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Salir.Location = new System.Drawing.Point(508, 17);
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(45, 46);
+            this.Salir.Size = new System.Drawing.Size(30, 30);
             this.Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Salir.TabIndex = 22;
             this.Salir.TabStop = false;
@@ -141,10 +140,10 @@
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(831, 711);
+            this.ClientSize = new System.Drawing.Size(554, 462);
             this.Controls.Add(this.Minimizar);
             this.Controls.Add(this.Salir);
             this.Controls.Add(this.panel1);
@@ -152,6 +151,7 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
