@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClasesBiblioteca;
-using Bunifu;
-using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
@@ -84,9 +82,6 @@ namespace ProyectoLibro
                     edi.nombre = txtNombre.Text;
                     edi.direccion = txtDireccion.Text;
                     edi.telefono = txtTelefono.Text;
-
-
-
                     Editorial.AgregarEditorial(edi);
                     LimpiarFormulario();
                     ActualizarListaEditoriales();
@@ -128,6 +123,7 @@ namespace ProyectoLibro
             }
         }
 
+    
 
         private void btnEliminar2_Click(object sender, EventArgs e)
         {

@@ -31,15 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevolucion));
             this.dtgDevolucion = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prestamoidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechavencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechadevolucionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.libroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prestamoDetalleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bibliotecaDataSet2 = new ProyectoLibro.BibliotecaDataSet2();
+            this.bibliotecaDataSet3BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecaDataSet3 = new ProyectoLibro.BibliotecaDataSet3();
             this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bibliotecaDataSet1 = new ProyectoLibro.BibliotecaDataSet1();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -54,32 +47,26 @@
             this.prestamoTableAdapter = new ProyectoLibro.BibliotecaDataSet1TableAdapters.PrestamoTableAdapter();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.prestamo_DetalleTableAdapter1 = new ProyectoLibro.BibliotecaDataSet2TableAdapters.Prestamo_DetalleTableAdapter();
             this.txtIdDetalle = new System.Windows.Forms.TextBox();
+            this.prestamoDetalleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bibliotecaDataSet2 = new ProyectoLibro.BibliotecaDataSet2();
+            this.prestamo_DetalleTableAdapter1 = new ProyectoLibro.BibliotecaDataSet2TableAdapters.Prestamo_DetalleTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDevolucion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet3BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgDevolucion
             // 
             this.dtgDevolucion.AllowUserToAddRows = false;
             this.dtgDevolucion.AllowUserToDeleteRows = false;
-            this.dtgDevolucion.AutoGenerateColumns = false;
             this.dtgDevolucion.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDevolucion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.prestamoidDataGridViewTextBoxColumn,
-            this.fechavencimientoDataGridViewTextBoxColumn,
-            this.fechadevolucionDataGridViewTextBoxColumn,
-            this.cantidadDataGridViewTextBoxColumn,
-            this.libroDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn});
-            this.dtgDevolucion.DataSource = this.prestamoDetalleBindingSource1;
             this.dtgDevolucion.Location = new System.Drawing.Point(114, 421);
             this.dtgDevolucion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtgDevolucion.Name = "dtgDevolucion";
@@ -92,69 +79,17 @@
             this.dtgDevolucion.TabStop = false;
             this.dtgDevolucion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDevolucion_CellClick);
             this.dtgDevolucion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDevolucion_CellContentClick);
+            this.dtgDevolucion.RowContextMenuStripChanged += new System.Windows.Forms.DataGridViewRowEventHandler(this.dtgDevolucion_RowContextMenuStripChanged);
             // 
-            // idDataGridViewTextBoxColumn
+            // bibliotecaDataSet3BindingSource
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bibliotecaDataSet3BindingSource.DataSource = this.bibliotecaDataSet3;
+            this.bibliotecaDataSet3BindingSource.Position = 0;
             // 
-            // prestamoidDataGridViewTextBoxColumn
+            // bibliotecaDataSet3
             // 
-            this.prestamoidDataGridViewTextBoxColumn.DataPropertyName = "prestamo_id";
-            this.prestamoidDataGridViewTextBoxColumn.HeaderText = "prestamo_id";
-            this.prestamoidDataGridViewTextBoxColumn.Name = "prestamoidDataGridViewTextBoxColumn";
-            this.prestamoidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechavencimientoDataGridViewTextBoxColumn
-            // 
-            this.fechavencimientoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.fechavencimientoDataGridViewTextBoxColumn.DataPropertyName = "fecha_vencimiento";
-            this.fechavencimientoDataGridViewTextBoxColumn.HeaderText = "fecha_vencimiento";
-            this.fechavencimientoDataGridViewTextBoxColumn.Name = "fechavencimientoDataGridViewTextBoxColumn";
-            this.fechavencimientoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechavencimientoDataGridViewTextBoxColumn.Width = 178;
-            // 
-            // fechadevolucionDataGridViewTextBoxColumn
-            // 
-            this.fechadevolucionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.fechadevolucionDataGridViewTextBoxColumn.DataPropertyName = "fecha_devolucion";
-            this.fechadevolucionDataGridViewTextBoxColumn.HeaderText = "fecha_devolucion";
-            this.fechadevolucionDataGridViewTextBoxColumn.Name = "fechadevolucionDataGridViewTextBoxColumn";
-            this.fechadevolucionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechadevolucionDataGridViewTextBoxColumn.Width = 169;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // libroDataGridViewTextBoxColumn
-            // 
-            this.libroDataGridViewTextBoxColumn.DataPropertyName = "libro";
-            this.libroDataGridViewTextBoxColumn.HeaderText = "libro";
-            this.libroDataGridViewTextBoxColumn.Name = "libroDataGridViewTextBoxColumn";
-            this.libroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // prestamoDetalleBindingSource1
-            // 
-            this.prestamoDetalleBindingSource1.DataMember = "Prestamo_Detalle";
-            this.prestamoDetalleBindingSource1.DataSource = this.bibliotecaDataSet2;
-            // 
-            // bibliotecaDataSet2
-            // 
-            this.bibliotecaDataSet2.DataSetName = "BibliotecaDataSet2";
-            this.bibliotecaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bibliotecaDataSet3.DataSetName = "BibliotecaDataSet3";
+            this.bibliotecaDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // prestamoBindingSource
             // 
@@ -304,10 +239,6 @@
             this.lblId.TabIndex = 59;
             this.lblId.Text = "Id";
             // 
-            // prestamo_DetalleTableAdapter1
-            // 
-            this.prestamo_DetalleTableAdapter1.ClearBeforeFill = true;
-            // 
             // txtIdDetalle
             // 
             this.txtIdDetalle.Location = new System.Drawing.Point(84, 88);
@@ -318,12 +249,26 @@
             this.txtIdDetalle.TabStop = false;
             this.txtIdDetalle.Visible = false;
             // 
+            // prestamoDetalleBindingSource1
+            // 
+            this.prestamoDetalleBindingSource1.DataMember = "Prestamo_Detalle";
+            this.prestamoDetalleBindingSource1.DataSource = this.bibliotecaDataSet2;
+            // 
+            // bibliotecaDataSet2
+            // 
+            this.bibliotecaDataSet2.DataSetName = "BibliotecaDataSet2";
+            this.bibliotecaDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // prestamo_DetalleTableAdapter1
+            // 
+            this.prestamo_DetalleTableAdapter1.ClearBeforeFill = true;
+            // 
             // frmDevolucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
-            this.ClientSize = new System.Drawing.Size(1450, 907);
+            this.ClientSize = new System.Drawing.Size(1450, 914);
             this.Controls.Add(this.txtIdDetalle);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
@@ -341,11 +286,13 @@
             this.Text = "Registro Devoluciones";
             this.Load += new System.EventHandler(this.frmDevolucion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDevolucion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet3BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoDetalleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bibliotecaDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,13 +317,8 @@
         private BibliotecaDataSet2 bibliotecaDataSet2;
         private System.Windows.Forms.BindingSource prestamoDetalleBindingSource1;
         private BibliotecaDataSet2TableAdapters.Prestamo_DetalleTableAdapter prestamo_DetalleTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prestamoidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechavencimientoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechadevolucionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn libroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txtIdDetalle;
+        private System.Windows.Forms.BindingSource bibliotecaDataSet3BindingSource;
+        private BibliotecaDataSet3 bibliotecaDataSet3;
     }
 }

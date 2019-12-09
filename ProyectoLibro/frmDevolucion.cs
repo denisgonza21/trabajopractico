@@ -9,15 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClasesBiblioteca;
-using Bunifu;
-using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
     public partial class frmDevolucion : Form
     {
         
-       SqlConnection conexion = new SqlConnection("server = RICARDO\\SQLEXPRESS;Database = Biblioteca;User Id = sa;Password = @lumno123");
+       SqlConnection conexion = new SqlConnection("server = DENIS\\DENISSQLSERVER;Database = Biblioteca;User Id = sa;Password = 123");
         public SqlCommand comando;
         public frmDevolucion()
         {
@@ -67,16 +65,18 @@ namespace ProyectoLibro
                 indice = Convert.ToInt32(registro["id"]);
                 txtId.Text = Convert.ToString(indice);
                 //String query = "select * from Prestamo WHERE cliente='" + txtId.Text + "'";
-                String query = "select PD.id,PD.prestamo_id, PD.fecha_vencimiento, PD.fecha_devolucion, PD.cantidad, PD.libro, PD.estado from Prestamo_Detalle PD, Prestamo P where P.cliente ='" + txtId.Text + "'and PD.prestamo_id = P.id and estado = 1";
-                updateGrid(query, "Prestamo");
+                /*String query = "select PD.id,PD.prestamo_id, PD.fecha_vencimiento, PD.fecha_devolucion, PD.cantidad, PD.libro, PD.estado from Prestamo_Detalle PD, Prestamo P where P.cliente ='" + txtId.Text + "'and PD.prestamo_id = P.id and estado = 1";
+                */
+                String query = "select PD.id as IdDetalle, P.id  as IdPrestamo,PD.fecha_vencimiento as FechaVencimiento, PD.fecha_devolucion as FechaDevolucion, PD.cantidad as Cantidad, L.id as IdLibro,L.nombre as NombreLibro, PD.estado as Estado from Prestamo P, Prestamo_Detalle PD inner join Libro L on L.id = PD.libro where P.cliente ='" + txtId.Text + "' and PD.prestamo_id = P.id and estado = 1 ";
 
-            }
+                updateGrid(query, "Prestamo");
+                            }
             conexion.Close();
         }
         public void updateGrid(String query, String tbl)
         {
             SqlDataAdapter ada = new SqlDataAdapter(query, new SqlConnection(Properties.Settings.Default.BibliotecaConnectionString));
-            DataSet dad = new DataSet();
+            BibliotecaDataSet3 dad = new BibliotecaDataSet3();
             ada.Fill(dad, tbl);
             dtgDevolucion.DataSource = dad;
             dtgDevolucion.DataMember = tbl;
@@ -107,6 +107,7 @@ namespace ProyectoLibro
                 MessageBox.Show("Error al actualizar");
 
             }
+            txtIdDetalle.Text="";
         }
 
         public bool modificar(string campos, string condicion)
@@ -121,6 +122,8 @@ namespace ProyectoLibro
                 if (i > 0)
                 {
                     actualizar();
+                    
+
                     conexion.Close();
                     return true;
                 }
@@ -151,8 +154,35 @@ namespace ProyectoLibro
 
         private void dtgDevolucion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow dgv = dtgDevolucion.Rows[e.RowIndex];
-            txtIdDetalle.Text = dgv.Cells[0].Value.ToString();
+            if(e.RowIndex>=0)
+            {
+                DataGridViewRow dgv = dtgDevolucion.Rows[e.RowIndex];
+                txtIdDetalle.Text = dgv.Cells[0].Value.ToString();
+            }
+            
+        }
+
+        private void dtgDevolucion_RowContextMenuStripChanged(object sender, DataGridViewRowEventArgs e)
+        {
+
+        }
+
+        private void prestamoDetalleBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.prestamo_DetalleTableAdapter1.FillBy(this.bibliotecaDataSet2.Prestamo_Detalle);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

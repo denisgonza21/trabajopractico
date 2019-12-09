@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu;
-using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {

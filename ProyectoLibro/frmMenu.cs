@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu;
-using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
@@ -107,6 +105,11 @@ namespace ProyectoLibro
         private void PanelChart_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmAcercaDe());
         }
     }
 }

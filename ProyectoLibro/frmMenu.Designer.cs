@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuTop = new System.Windows.Forms.Panel();
+            this.btnAcercaDe = new Bunifu.Framework.UI.BunifuThinButton2();
             this.Minimizar = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -423,6 +424,7 @@
             // MenuTop
             // 
             this.MenuTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.MenuTop.Controls.Add(this.btnAcercaDe);
             this.MenuTop.Controls.Add(this.Minimizar);
             this.MenuTop.Controls.Add(this.Salir);
             this.MenuTop.Controls.Add(this.label1);
@@ -435,6 +437,36 @@
             this.MenuTop.Name = "MenuTop";
             this.MenuTop.Size = new System.Drawing.Size(1483, 123);
             this.MenuTop.TabIndex = 1;
+            // 
+            // btnAcercaDe
+            // 
+            this.btnAcercaDe.ActiveBorderThickness = 1;
+            this.btnAcercaDe.ActiveCornerRadius = 20;
+            this.btnAcercaDe.ActiveFillColor = System.Drawing.Color.Teal;
+            this.btnAcercaDe.ActiveForecolor = System.Drawing.Color.White;
+            this.btnAcercaDe.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnAcercaDe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAcercaDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.btnAcercaDe.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAcercaDe.BackgroundImage")));
+            this.btnAcercaDe.ButtonText = "Acerca de";
+            this.btnAcercaDe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AnimacionSidebarBack.SetDecoration(this.btnAcercaDe, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSidebar.SetDecoration(this.btnAcercaDe, BunifuAnimatorNS.DecorationType.None);
+            this.btnAcercaDe.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcercaDe.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnAcercaDe.IdleBorderThickness = 1;
+            this.btnAcercaDe.IdleCornerRadius = 20;
+            this.btnAcercaDe.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
+            this.btnAcercaDe.IdleForecolor = System.Drawing.Color.White;
+            this.btnAcercaDe.IdleLineColor = System.Drawing.Color.Transparent;
+            this.btnAcercaDe.Location = new System.Drawing.Point(1167, 37);
+            this.btnAcercaDe.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAcercaDe.Name = "btnAcercaDe";
+            this.btnAcercaDe.Size = new System.Drawing.Size(151, 46);
+            this.btnAcercaDe.TabIndex = 19;
+            this.btnAcercaDe.TabStop = false;
+            this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // Minimizar
             // 
@@ -633,5 +665,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private BunifuAnimatorNS.BunifuTransition AnimacionSidebar;
         private BunifuAnimatorNS.BunifuTransition AnimacionSidebarBack;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnAcercaDe;
     }
 }

@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu;
-using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
@@ -95,8 +93,6 @@ namespace ProyectoLibro
                     cliente.direccion = txtDireccion.Text;
                     cliente.telefono = txtTelefono.Text;
                     cliente.fecha_inscripcion = dtpFechaIngreso.Value.Date;
-
-
                     Cliente.AgregarCliente(cliente);
                     LimpiarFormulario();
                     ActualizarListaCliente();
@@ -109,6 +105,9 @@ namespace ProyectoLibro
             }
         }
 
+
+
+
         private void btnModificar2_Click(object sender, EventArgs e)
         {
             try
@@ -118,9 +117,6 @@ namespace ProyectoLibro
                     int index = lstCliente.SelectedIndex;
                     Cliente c = ObtenerClienteFormulario();
                     Cliente.EditarCliente(index, c);
-
-
-
                     ActualizarListaCliente();
                     LimpiarFormulario();
 
@@ -131,6 +127,7 @@ namespace ProyectoLibro
                 MessageBox.Show(ex.ToString());
             }
         }
+
         private void btnEliminar2_Click(object sender, EventArgs e)
         {
             try
@@ -152,6 +149,7 @@ namespace ProyectoLibro
                 MessageBox.Show(ex.ToString());
             }
         }
+    
 
         private void btnLimpiar2_Click(object sender, EventArgs e)
         {
@@ -197,4 +195,5 @@ namespace ProyectoLibro
         }
     }
 }
+
 

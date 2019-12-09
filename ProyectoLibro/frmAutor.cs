@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu;
-using BunifuAnimatorNS;
 using ClasesBiblioteca;
 
 namespace ProyectoLibro
@@ -77,6 +75,7 @@ namespace ProyectoLibro
 
         private void btnAgregar2_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (ValidarCampos())
@@ -93,13 +92,11 @@ namespace ProyectoLibro
                     LimpiarFormulario();
                     ActualizarListaAutores();
                 }
-                    
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
         }
 
         private void btnModificar2_Click(object sender, EventArgs e)
@@ -124,10 +121,10 @@ namespace ProyectoLibro
                         MessageBox.Show("Ojo, Selecciona un Item");
                     }
                 }
-                    
             }
             catch (Exception ex)
             {
+                
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -148,13 +145,13 @@ namespace ProyectoLibro
                 {
                     MessageBox.Show("Ojo, Selecciona un Item");
                 }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
-
         private void btnLimpiar2_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();

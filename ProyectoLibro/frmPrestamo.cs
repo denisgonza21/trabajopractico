@@ -9,15 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Bunifu;
-using BunifuAnimatorNS;
 
 namespace ProyectoLibro
 {
     public partial class frmPrestamo : Form
     {
-        SqlConnection conexion = new SqlConnection("server = RICARDO\\SQLEXPRESS;Database = Biblioteca;User Id = sa;Password = @lumno123");
-
+        SqlConnection conexion = new SqlConnection("server = DENIS\\DENISSQLSERVER;Database = Biblioteca;User Id = sa;Password = 123");
+      
         Prestamo prestamo;
         public frmPrestamo()
         {
@@ -27,7 +25,7 @@ namespace ProyectoLibro
 
         private void ActualizarDataGrid()
         {
-            dtgDetallePrestamo.DataSource = null;
+            dtgDetallePrestamo.DataSource= null;
             dtgDetallePrestamo.DataSource = prestamo.detalle_prestamo;
         }
 
@@ -43,9 +41,9 @@ namespace ProyectoLibro
             dtpFechaVencimiento.Value = System.DateTime.Now;
             txtCantidad.Text = "1";
             txtEstado.Text = "";
-
-
-
+            
+            
+         
         }
 
         private void frmPrestamo_Load(object sender, EventArgs e)
@@ -64,12 +62,12 @@ namespace ProyectoLibro
             txtEstado.Enabled = false;
             txtNombre.Enabled = false;
             txtNombre.Text = "";
-
-
+           
+        
 
         }
 
-
+       
 
         private void dtgDetallePrestamo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -86,7 +84,7 @@ namespace ProyectoLibro
             if (registro.Read())
             {
                 txtNombre.Text = registro["nombre"].ToString();
-
+                
             }
             conexion.Close();
 
@@ -112,10 +110,11 @@ namespace ProyectoLibro
                     LimpiarFormulario(false);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
         private void btnEliminar2_Click(object sender, EventArgs e)
@@ -161,6 +160,7 @@ namespace ProyectoLibro
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
         private bool ValidarCampos()
@@ -191,10 +191,8 @@ namespace ProyectoLibro
                 dtpFechaVencimiento.Focus();
                 return false;
             }
-
             return true;
         }
     }
 }
-
 
