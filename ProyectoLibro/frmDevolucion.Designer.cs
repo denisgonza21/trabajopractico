@@ -65,6 +65,7 @@
             // 
             this.dtgDevolucion.AllowUserToAddRows = false;
             this.dtgDevolucion.AllowUserToDeleteRows = false;
+            this.dtgDevolucion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dtgDevolucion.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDevolucion.Location = new System.Drawing.Point(114, 421);

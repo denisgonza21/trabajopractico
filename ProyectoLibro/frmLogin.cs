@@ -31,7 +31,7 @@ namespace ProyectoLibro
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //txtContraseña.isPassword = true;
+            
 
             btnIngresar.Focus();
 
@@ -80,5 +80,10 @@ namespace ProyectoLibro
         private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
         {
                     }
+
+        private void txtContraseña_OnValueChanged(object sender, EventArgs e)
+        {
+            txtContraseña.isPassword = true;
+        }
     }
 }

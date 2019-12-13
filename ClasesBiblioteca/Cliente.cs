@@ -16,6 +16,7 @@ namespace ClasesBiblioteca
         public string direccion { get; set; }
         public string telefono { get; set; }
         public DateTime fecha_inscripcion { get; set;}
+        public string email { get; set; }
 
 
         public static List<Cliente> listaClientes = new List<Cliente>();
@@ -28,7 +29,7 @@ namespace ClasesBiblioteca
 
             {
                 con.Open(); //Abrimos la conex con la BD
-                string textoCmd = "insert into Cliente (nroDocumento, nombre, direccion, telefono, fecha_inscripcion) VALUES (@nroDocumento, @nombre, @direccion, @telefono, @fecha_inscripcion)";
+                string textoCmd = "insert into Cliente (nroDocumento, nombre, direccion, telefono, fecha_inscripcion, email) VALUES (@nroDocumento, @nombre, @direccion, @telefono, @fecha_inscripcion, @email)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 //PARAMETROS
@@ -37,6 +38,7 @@ namespace ClasesBiblioteca
                 SqlParameter c3 = new SqlParameter("@direccion", c.direccion);
                 SqlParameter c4 = new SqlParameter("@telefono", c.telefono);
                 SqlParameter c5 = new SqlParameter("@fecha_inscripcion", c.fecha_inscripcion);
+                SqlParameter c6 = new SqlParameter("@email", c.email);
 
                 //Le decimos a los parametros de que tipo de datos son
                 c1.SqlDbType = SqlDbType.VarChar;
@@ -44,6 +46,7 @@ namespace ClasesBiblioteca
                 c3.SqlDbType = SqlDbType.VarChar;
                 c4.SqlDbType = SqlDbType.VarChar;
                 c5.SqlDbType = SqlDbType.DateTime;
+                c6.SqlDbType = SqlDbType.VarChar;
 
                 //Agragamos los parametros al command
                 cmd.Parameters.Add(c1);
@@ -51,6 +54,7 @@ namespace ClasesBiblioteca
                 cmd.Parameters.Add(c3);
                 cmd.Parameters.Add(c4);
                 cmd.Parameters.Add(c5);
+                cmd.Parameters.Add(c6);
                 cmd.ExecuteNonQuery();
 
             }
@@ -83,7 +87,7 @@ namespace ClasesBiblioteca
             using (SqlConnection con = new SqlConnection(SqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCMD = "UPDATE Cliente SET nroDocumento = @nroDocumento, nombre= @nombre, direccion = @direccion, telefono = @telefono, fecha_inscripcion = @fecha_inscripcion where id = @id";
+                string textoCMD = "UPDATE Cliente SET nroDocumento = @nroDocumento, nombre= @nombre, direccion = @direccion, telefono = @telefono, fecha_inscripcion = @fecha_inscripcion, email = @email where id = @id";
 
                 SqlCommand cmd = new SqlCommand(textoCMD, con);
 
@@ -93,7 +97,8 @@ namespace ClasesBiblioteca
                 SqlParameter c3 = new SqlParameter("@direccion", c.direccion);
                 SqlParameter c4 = new SqlParameter("@telefono", c.telefono);
                 SqlParameter c5 = new SqlParameter("@fecha_inscripcion", c.fecha_inscripcion);
-                SqlParameter c6 = new SqlParameter("@id", c.id);
+                SqlParameter c6 = new SqlParameter("@email", c.email);
+                SqlParameter c7 = new SqlParameter("@id", c.id);
 
                 //Le decimos a los parametros de que tipo de datos son
                 c1.SqlDbType = SqlDbType.VarChar;
@@ -101,7 +106,8 @@ namespace ClasesBiblioteca
                 c3.SqlDbType = SqlDbType.VarChar;
                 c4.SqlDbType = SqlDbType.VarChar;
                 c5.SqlDbType = SqlDbType.DateTime;
-                c6.SqlDbType = SqlDbType.Int;
+                c6.SqlDbType = SqlDbType.VarChar;
+                c7.SqlDbType = SqlDbType.Int;
 
 
                 cmd.Parameters.Add(c1);
@@ -110,6 +116,7 @@ namespace ClasesBiblioteca
                 cmd.Parameters.Add(c4);
                 cmd.Parameters.Add(c5);
                 cmd.Parameters.Add(c6);
+                cmd.Parameters.Add(c7);
 
                 cmd.ExecuteNonQuery();
             }
@@ -163,6 +170,7 @@ namespace ClasesBiblioteca
                     cliente.direccion = electorDeDatos.GetString(3);
                     cliente.telefono = electorDeDatos.GetString(4);
                     cliente.fecha_inscripcion = electorDeDatos.GetDateTime(5);
+                    cliente.email = electorDeDatos.GetString(6);
 
                     listaClientes.Add(cliente);
                 }

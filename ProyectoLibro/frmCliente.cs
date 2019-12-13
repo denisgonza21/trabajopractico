@@ -28,6 +28,7 @@ namespace ProyectoLibro
             txtTelefono.Text = "";
             dtpFechaIngreso.Value = System.DateTime.Now;
             txtId.Text = "";
+            txtEmail.Text = "";
 
         }
 
@@ -52,11 +53,13 @@ namespace ProyectoLibro
         private Cliente ObtenerClienteFormulario()
         {
             Cliente cliente = new Cliente();
+            cliente.id = Convert.ToInt16(txtId.Text);
             cliente.nroDocumento = txtDocumento.Text;
             cliente.nombre = txtNombre.Text;
             cliente.direccion = txtDireccion.Text;
             cliente.telefono = txtTelefono.Text;
             cliente.fecha_inscripcion = dtpFechaIngreso.Value.Date;
+            cliente.email = txtEmail.Text;
             return cliente;
         }
 
@@ -78,6 +81,7 @@ namespace ProyectoLibro
                 txtDireccion.Text = c.direccion;
                 txtTelefono.Text = c.telefono;
                 dtpFechaIngreso.Value = c.fecha_inscripcion;
+                txtEmail.Text = c.email;
             }
         }
 
@@ -93,6 +97,7 @@ namespace ProyectoLibro
                     cliente.direccion = txtDireccion.Text;
                     cliente.telefono = txtTelefono.Text;
                     cliente.fecha_inscripcion = dtpFechaIngreso.Value.Date;
+                    cliente.email = txtEmail.Text;
                     Cliente.AgregarCliente(cliente);
                     LimpiarFormulario();
                     ActualizarListaCliente();
@@ -114,11 +119,20 @@ namespace ProyectoLibro
             {
                 if (ValidarCampos())
                 {
-                    int index = lstCliente.SelectedIndex;
-                    Cliente c = ObtenerClienteFormulario();
-                    Cliente.EditarCliente(index, c);
-                    ActualizarListaCliente();
-                    LimpiarFormulario();
+                    Cliente cliente = (Cliente)lstCliente.SelectedItem;
+                    if (cliente != null)
+                    {
+                        int index = lstCliente.SelectedIndex;
+
+                        Cliente c = ObtenerClienteFormulario();
+                        Cliente.EditarCliente(index, c);
+
+                        LimpiarFormulario();
+                        ActualizarListaCliente();
+                    }else
+                    {
+                        MessageBox.Show("Ojo, Selecciona un Item");
+                    }
 
                 }
             }
@@ -189,6 +203,12 @@ namespace ProyectoLibro
             {
                 MessageBox.Show("El telefono no puede estar vacío", "Error");
                 txtTelefono.Focus();
+                return false;
+            }
+            if (String.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("El email no puede estar vacío", "Error");
+                txtEmail.Focus();
                 return false;
             }
             return true;

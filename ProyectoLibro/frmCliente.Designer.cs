@@ -48,6 +48,8 @@
             this.btnEliminar2 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnLimpiar2 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSalir2 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -163,7 +165,7 @@
             // 
             this.lstCliente.FormattingEnabled = true;
             this.lstCliente.ItemHeight = 20;
-            this.lstCliente.Location = new System.Drawing.Point(354, 534);
+            this.lstCliente.Location = new System.Drawing.Point(353, 596);
             this.lstCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstCliente.Name = "lstCliente";
             this.lstCliente.ScrollAlwaysVisible = true;
@@ -210,7 +212,7 @@
             this.btnAgregar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
             this.btnAgregar2.IdleForecolor = System.Drawing.Color.White;
             this.btnAgregar2.IdleLineColor = System.Drawing.Color.White;
-            this.btnAgregar2.Location = new System.Drawing.Point(399, 441);
+            this.btnAgregar2.Location = new System.Drawing.Point(398, 503);
             this.btnAgregar2.Margin = new System.Windows.Forms.Padding(5);
             this.btnAgregar2.Name = "btnAgregar2";
             this.btnAgregar2.Size = new System.Drawing.Size(145, 73);
@@ -236,7 +238,7 @@
             this.btnModificar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
             this.btnModificar2.IdleForecolor = System.Drawing.Color.White;
             this.btnModificar2.IdleLineColor = System.Drawing.Color.White;
-            this.btnModificar2.Location = new System.Drawing.Point(554, 441);
+            this.btnModificar2.Location = new System.Drawing.Point(553, 503);
             this.btnModificar2.Margin = new System.Windows.Forms.Padding(5);
             this.btnModificar2.Name = "btnModificar2";
             this.btnModificar2.Size = new System.Drawing.Size(145, 73);
@@ -262,7 +264,7 @@
             this.btnEliminar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
             this.btnEliminar2.IdleForecolor = System.Drawing.Color.White;
             this.btnEliminar2.IdleLineColor = System.Drawing.Color.White;
-            this.btnEliminar2.Location = new System.Drawing.Point(709, 441);
+            this.btnEliminar2.Location = new System.Drawing.Point(708, 503);
             this.btnEliminar2.Margin = new System.Windows.Forms.Padding(5);
             this.btnEliminar2.Name = "btnEliminar2";
             this.btnEliminar2.Size = new System.Drawing.Size(145, 73);
@@ -288,7 +290,7 @@
             this.btnLimpiar2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
             this.btnLimpiar2.IdleForecolor = System.Drawing.Color.White;
             this.btnLimpiar2.IdleLineColor = System.Drawing.Color.White;
-            this.btnLimpiar2.Location = new System.Drawing.Point(864, 441);
+            this.btnLimpiar2.Location = new System.Drawing.Point(863, 503);
             this.btnLimpiar2.Margin = new System.Windows.Forms.Padding(5);
             this.btnLimpiar2.Name = "btnLimpiar2";
             this.btnLimpiar2.Size = new System.Drawing.Size(145, 73);
@@ -314,7 +316,7 @@
             this.btnSalir2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(89)))));
             this.btnSalir2.IdleForecolor = System.Drawing.Color.White;
             this.btnSalir2.IdleLineColor = System.Drawing.Color.White;
-            this.btnSalir2.Location = new System.Drawing.Point(1035, 585);
+            this.btnSalir2.Location = new System.Drawing.Point(1034, 647);
             this.btnSalir2.Margin = new System.Windows.Forms.Padding(5);
             this.btnSalir2.Name = "btnSalir2";
             this.btnSalir2.Size = new System.Drawing.Size(145, 73);
@@ -322,12 +324,33 @@
             this.btnSalir2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSalir2.Click += new System.EventHandler(this.btnSalir2_Click);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(616, 424);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(270, 26);
+            this.txtEmail.TabIndex = 33;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblEmail.Location = new System.Drawing.Point(450, 427);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(48, 20);
+            this.lblEmail.TabIndex = 34;
+            this.lblEmail.Text = "Email";
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1472, 963);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.btnSalir2);
             this.Controls.Add(this.btnLimpiar2);
             this.Controls.Add(this.btnEliminar2);
@@ -378,5 +401,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnEliminar2;
         private Bunifu.Framework.UI.BunifuThinButton2 btnLimpiar2;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSalir2;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

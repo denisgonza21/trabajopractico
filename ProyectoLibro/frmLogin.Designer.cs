@@ -33,14 +33,14 @@
             this.txtContraseña = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnIngresar = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.Minimizar = new System.Windows.Forms.PictureBox();
             this.Salir = new System.Windows.Forms.PictureBox();
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Salir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -55,10 +55,10 @@
             this.txtUsuario.LineIdleColor = System.Drawing.Color.White;
             this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.Teal;
             this.txtUsuario.LineThickness = 4;
-            this.txtUsuario.Location = new System.Drawing.Point(360, 273);
+            this.txtUsuario.Location = new System.Drawing.Point(360, 254);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(50);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(357, 49);
+            this.txtUsuario.Size = new System.Drawing.Size(357, 68);
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -74,12 +74,13 @@
             this.txtContraseña.LineIdleColor = System.Drawing.Color.White;
             this.txtContraseña.LineMouseHoverColor = System.Drawing.Color.Teal;
             this.txtContraseña.LineThickness = 4;
-            this.txtContraseña.Location = new System.Drawing.Point(360, 360);
+            this.txtContraseña.Location = new System.Drawing.Point(360, 344);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(357, 49);
+            this.txtContraseña.Size = new System.Drawing.Size(357, 65);
             this.txtContraseña.TabIndex = 3;
             this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtContraseña.OnValueChanged += new System.EventHandler(this.txtContraseña_OnValueChanged);
             // 
             // btnIngresar
             // 
@@ -117,6 +118,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 711);
             this.panel1.TabIndex = 21;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(-18, 203);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(369, 325);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 24;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
             // 
             // Minimizar
             // 
@@ -169,21 +185,6 @@
             this.bunifuThinButton21.TabIndex = 1;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(-18, 203);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(369, 325);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 24;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -204,9 +205,9 @@
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Salir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }

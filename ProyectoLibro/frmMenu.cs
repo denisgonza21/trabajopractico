@@ -111,5 +111,10 @@ namespace ProyectoLibro
         {
             AbrirFormEnPanel(new frmAcercaDe());
         }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmEmail());
+        }
     }
 }
