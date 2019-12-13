@@ -86,6 +86,8 @@ namespace ProyectoLibro
 
         private void btnAgregar2_Click(object sender, EventArgs e)
         {
+            try {
+            
             Funcionario fun = new Funcionario();
 
             fun.nroDocumento = txtNroDocumento.Text;
@@ -95,17 +97,22 @@ namespace ProyectoLibro
             fun.usuario = txtUsuario.Text;
             fun.fechaInicio = dtpFechaIngreso.Value;
             fun.constrasena = txtContrasena.Text;
-
-
-
-
             Funcionario.AgregarFuncionario(fun);
             LimpiarFormulario();
             ActualizarListaFuncionarios();
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+
         }
 
         private void btnModificar2_Click(object sender, EventArgs e)
         {
+            try {
             Funcionario func = (Funcionario)lstFuncionario.SelectedItem;
             if (func != null)
             {
@@ -121,10 +128,17 @@ namespace ProyectoLibro
             {
                 MessageBox.Show("Ojo, Selecciona un Item");
             }
+             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnEliminar2_Click(object sender, EventArgs e)
         {
+             try
+            {
             Funcionario func = (Funcionario)lstFuncionario.SelectedItem;
             if (func != null)
             {
@@ -137,6 +151,11 @@ namespace ProyectoLibro
             {
                 MessageBox.Show("Ojo, Selecciona un Item");
             }
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnLimpiar2_Click(object sender, EventArgs e)
@@ -148,5 +167,7 @@ namespace ProyectoLibro
         {
             this.Close();
         }
+
+      
     }
 }

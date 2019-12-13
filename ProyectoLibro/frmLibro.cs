@@ -95,6 +95,7 @@ namespace ProyectoLibro
 
         private void btnAgregar2_Click(object sender, EventArgs e)
         {
+            try {
             Libro libro = new Libro();
             libro.nombre = txtNombre.Text;
             libro.editorial = (Editorial)cmbEditorial.SelectedItem;
@@ -108,9 +109,15 @@ namespace ProyectoLibro
             LimpiarFormulario();
             ActualizarListaLibros();
         }
+         catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            }
 
         private void btnModificar2_Click(object sender, EventArgs e)
         {
+            try {
             Libro libro = (Libro)lstLibro.SelectedItem;
             if (libro != null)
             {
@@ -126,10 +133,16 @@ namespace ProyectoLibro
             {
                 MessageBox.Show("Ojo, Selecciona un Item");
             }
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnEliminar2_Click(object sender, EventArgs e)
         {
+            try {
             Libro libro = (Libro)lstLibro.SelectedItem;
             if (libro != null)
             {
@@ -141,6 +154,11 @@ namespace ProyectoLibro
             else
             {
                 MessageBox.Show("Ojo, Selecciona un Item");
+            }
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 
